@@ -42,7 +42,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-primary-foreground/60">Email Us</p>
                   <a href="mailto:tntdomestics2023@gmail.com" className="text-lg font-semibold hover:underline">
-                    tntdomestics2023@gmail.com
+                    Send an Email
                   </a>
                 </div>
               </div>
@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Service Area</p>
-                  <p className="text-lg font-semibold">San Antonio, TX & Surrounding Areas</p>
+                  <p className="text-lg font-semibold">Texas & Hawaii</p>
                 </div>
               </div>
             </div>

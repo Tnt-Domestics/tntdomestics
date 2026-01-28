@@ -78,10 +78,10 @@ const Footer = () => {
               </p>
               <p>
                 <a href="mailto:tntdomestics2023@gmail.com" className="hover:text-primary transition-colors">
-                  tntdomestics2023@gmail.com
+                  Email Us
                 </a>
               </p>
-              <p className="pt-2">San Antonio, TX & Surrounding Areas</p>
+              <p className="pt-2">Texas & Hawaii</p>
             </div>
           </div>
         </div>
