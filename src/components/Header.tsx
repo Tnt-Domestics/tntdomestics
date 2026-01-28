@@ -75,8 +75,10 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-            <Button variant="default" size="sm" className="ml-4">
-              Request a Quote
+            <Button variant="default" size="sm" className="ml-4" asChild>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                Request a Quote
+              </a>
             </Button>
           </div>
 
@@ -103,8 +105,10 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="default" className="mt-2">
-                Request a Quote
+              <Button variant="default" className="mt-2" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                  Request a Quote
+                </a>
               </Button>
             </div>
           </div>
