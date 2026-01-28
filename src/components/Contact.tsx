@@ -73,12 +73,16 @@ const Contact = () => {
             </p>
 
             <div className="space-y-4">
-              <Button size="lg" className="w-full group shadow-teal">
-                Request a Quote
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              <Button size="lg" className="w-full group shadow-teal" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                  Request a Quote
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="w-full">
-                Schedule a Private Consultation
+              <Button size="lg" variant="outline" className="w-full" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                  Schedule a Private Consultation
+                </a>
               </Button>
             </div>
 
