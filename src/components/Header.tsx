@@ -41,7 +41,7 @@ const Header = () => {
             </a>
             <a href="mailto:tntdomestics2023@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="w-4 h-4" />
-              tntdomestics2023@gmail.com
+              Email Us
             </a>
           </div>
           <span className="text-primary-foreground/80">Government | Commercial | Luxury Residential</span>
