@@ -1,8 +1,10 @@
-import { Home, Sparkles, Shield, Gem, Key, Calendar, Leaf } from 'lucide-react';
+import { Home, Sparkles, Shield, Gem, Key, Calendar, Leaf, Shirt, Wine } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
 import hero from '@/assets/residential-hero.jpg';
 import img1 from '@/assets/residential-1.jpg';
 import img2 from '@/assets/residential-2.jpg';
+import img3 from '@/assets/residential-3.jpg';
+import img4 from '@/assets/residential-4.jpg';
 
 const Residential = () => (
   <ServicePage
@@ -50,6 +52,16 @@ const Residential = () => (
         title: 'Discreet Staffing',
         description: 'Background-checked, NDA-bound crews trained to work seamlessly around your family and household staff.',
       },
+      {
+        icon: Shirt,
+        title: 'Closet & Wardrobe Care',
+        description: 'Organized folding, garment rotation, and dust-free wardrobe maintenance for walk-in closets and dressing rooms.',
+      },
+      {
+        icon: Wine,
+        title: 'Event Prep & Recovery',
+        description: 'Pre-event polishing and post-event restoration—so hosting at home never means cleaning after guests leave.',
+      },
     ]}
     standardsEyebrow="How We Operate"
     standardsHeadline="Standards Worthy of a"
@@ -69,6 +81,8 @@ const Residential = () => (
     gallery={[
       { src: img1, alt: 'Immaculate luxury kitchen', label: 'Kitchen Deep Clean' },
       { src: img2, alt: 'Spa-like master bathroom', label: 'Primary Bath Detailing' },
+      { src: img3, alt: 'Organized luxury walk-in closet', label: 'Wardrobe & Closet Care' },
+      { src: img4, alt: 'Polished formal living room', label: 'Living Areas & Fine Finishes' },
     ]}
     ctaHeadline="Bring TNT Into Your Home"
     ctaBody="Schedule a private consultation to design a cleaning program tailored to your residence and household routine."
