@@ -55,6 +55,45 @@ const PrivateJet = () => {
     'Detailed service logs for each aircraft',
   ];
 
+  const beforeAfter = [
+    {
+      before: jetBefore1,
+      after: jetAfter1,
+      title: 'Cabin Interior Refresh',
+      description: 'Full leather conditioning, carpet extraction, and detailing.',
+    },
+    {
+      before: jetBefore2,
+      after: jetAfter2,
+      title: 'Exterior Wash & Polish',
+      description: 'Fuselage detail with paint protection and brightwork polish.',
+    },
+  ];
+
+  const reviews = [
+    {
+      name: 'Marcus Delaney',
+      role: 'Charter Operations Director',
+      rating: 5,
+      quote:
+        'TNT turned around three aircraft between charters without missing a beat. The cabins looked showroom-new and my principals noticed immediately.',
+    },
+    {
+      name: 'Elena Vasquez',
+      role: 'Private Aircraft Owner',
+      rating: 5,
+      quote:
+        'Discreet, professional, and meticulous. They treat my jet like it belongs to them. I will never use another cleaning team.',
+    },
+    {
+      name: 'Captain James Reid',
+      role: 'Corporate Flight Department',
+      rating: 5,
+      quote:
+        'FOD-conscious, aviation-approved products, and on-time every single turn. TNT is the gold standard for aircraft cleaning.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
