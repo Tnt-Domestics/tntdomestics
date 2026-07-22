@@ -1,10 +1,14 @@
-import { ArrowRight, Plane, Sparkles, Shield, Clock, Award, CheckCircle2, Gem, Eye, Wind } from 'lucide-react';
+import { ArrowRight, Plane, Sparkles, Shield, Clock, Award, CheckCircle2, Gem, Eye, Wind, Star, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import jetHero from '@/assets/jet-hero.jpg';
+import jetBefore1 from '@/assets/jet-before-1.jpg';
+import jetAfter1 from '@/assets/jet-after-1.jpg';
+import jetBefore2 from '@/assets/jet-before-2.jpg';
+import jetAfter2 from '@/assets/jet-after-2.jpg';
 
 const QUOTE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor';
 
