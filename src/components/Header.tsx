@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? 'bg-card/95 backdrop-blur-md shadow-soft'
           : 'bg-transparent'
       }`}
@@ -54,11 +54,11 @@ const Header = () => {
       <nav className="container-wide mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="TNT Domestics"
-              className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
               <span className="block text-xl font-bold text-primary leading-tight">TNT Domestics</span>
@@ -95,20 +95,24 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4 pt-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-border animate-fade-in bg-card/95 backdrop-blur-md -mx-6 px-6 rounded-b-xl">
+            <div className="flex flex-col gap-1 pt-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors py-2"
+                  className="text-foreground/80 hover:text-primary transition-colors py-3 border-b border-border/50 last:border-b-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <Button variant="default" className="mt-2" asChild>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+              <div className="flex flex-col gap-2 pt-3">
+                <a href="tel:210-807-1968" className="text-sm text-muted-foreground py-1">📞 210-807-1968</a>
+                <a href="mailto:tntdomestics2023@gmail.com" className="text-sm text-muted-foreground py-1">✉️ Email Us</a>
+              </div>
+              <Button variant="default" className="mt-3" asChild>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                   Request a Quote
                 </a>
               </Button>
