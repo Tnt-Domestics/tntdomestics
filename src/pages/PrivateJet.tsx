@@ -245,12 +245,12 @@ const PrivateJet = () => {
           </div>
         </section>
 
-        {/* Before & After */}
+        {/* Gallery */}
         <section className="section-padding bg-muted/30">
           <div className="container-wide mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Before & After
+                Our Work
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 See the{' '}
@@ -261,43 +261,33 @@ const PrivateJet = () => {
               </p>
             </div>
 
-            <div className="space-y-16">
-              {beforeAfter.map((item, i) => (
-                <div key={i}>
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
-                      <img
-                        src={item.before}
-                        alt={`${item.title} before cleaning`}
-                        loading="lazy"
-                        width={1024}
-                        height={1024}
-                        className="w-full h-80 object-cover"
-                      />
-                      <div className="absolute top-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider">
-                        Before
-                      </div>
-                    </div>
-                    <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
-                      <img
-                        src={item.after}
-                        alt={`${item.title} after cleaning`}
-                        loading="lazy"
-                        width={1024}
-                        height={1024}
-                        className="w-full h-80 object-cover"
-                      />
-                      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider">
-                        After
-                      </div>
-                    </div>
-                  </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                <img
+                  src={jetAfter1}
+                  alt="Refreshed private jet cabin interior"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                  Cabin Interior Refresh
                 </div>
-              ))}
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                <img
+                  src={jetAfter2}
+                  alt="Polished private jet exterior"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                  Exterior Wash & Polish
+                </div>
+              </div>
             </div>
           </div>
         </section>
