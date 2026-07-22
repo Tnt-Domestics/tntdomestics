@@ -46,7 +46,7 @@ const Header = () => {
               Email Us
             </a>
           </div>
-          <span className="text-primary-foreground/80">Government | Commercial | Luxury Residential</span>
+          <span className="text-primary-foreground/80">Government | Commercial | Luxury Residential | Aviation</span>
         </div>
       </div>
 
