@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import jetHero from '@/assets/jet-hero.jpg';
-import jetBefore1 from '@/assets/jet-before-1.jpg';
 import jetAfter1 from '@/assets/jet-after-1.jpg';
-import jetBefore2 from '@/assets/jet-before-2.jpg';
 import jetAfter2 from '@/assets/jet-after-2.jpg';
+import jetGalley from '@/assets/jet-galley.jpg';
+import jetExteriorFull from '@/assets/jet-exterior-full.jpg';
 
 const QUOTE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor';
 
@@ -286,6 +286,32 @@ const PrivateJet = () => {
                 />
                 <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                   Exterior Wash & Polish
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                <img
+                  src={jetGalley}
+                  alt="Sanitized private jet galley"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                  Galley & Lavatory Sanitization
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                <img
+                  src={jetExteriorFull}
+                  alt="Detailed private jet fuselage on tarmac"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                  Full Fuselage Detail
                 </div>
               </div>
             </div>
