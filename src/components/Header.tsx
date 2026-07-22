@@ -16,11 +16,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Standards', href: '#standards' },
-    { label: 'Credentials', href: '#credentials' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About', href: '/#about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Private Jet', href: '/private-jet-cleaning' },
+    { label: 'Credentials', href: '/#credentials' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
