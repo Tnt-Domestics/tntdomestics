@@ -55,20 +55,6 @@ const PrivateJet = () => {
     'Detailed service logs for each aircraft',
   ];
 
-  const beforeAfter = [
-    {
-      before: jetBefore1,
-      after: jetAfter1,
-      title: 'Cabin Interior Refresh',
-      description: 'Full leather conditioning, carpet extraction, and detailing.',
-    },
-    {
-      before: jetBefore2,
-      after: jetAfter2,
-      title: 'Exterior Wash & Polish',
-      description: 'Fuselage detail with paint protection and brightwork polish.',
-    },
-  ];
 
   const reviews = [
     {
