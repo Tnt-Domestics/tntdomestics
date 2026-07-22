@@ -10,7 +10,7 @@ import jetAfter2 from '@/assets/jet-after-2.jpg';
 import jetGalley from '@/assets/jet-galley.jpg';
 import jetExteriorFull from '@/assets/jet-exterior-full.jpg';
 
-const QUOTE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform?usp=publish-editor';
+const QUOTE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform';
 
 const PrivateJet = () => {
   const services = [
