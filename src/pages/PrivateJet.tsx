@@ -245,6 +245,101 @@ const PrivateJet = () => {
           </div>
         </section>
 
+        {/* Before & After */}
+        <section className="section-padding bg-muted/30">
+          <div className="container-wide mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Before & After
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                See the{' '}
+                <span className="text-primary">TNT Difference</span>
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Real results from real aircraft. Every service delivers a visible transformation.
+              </p>
+            </div>
+
+            <div className="space-y-16">
+              {beforeAfter.map((item, i) => (
+                <div key={i}>
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                      <img
+                        src={item.before}
+                        alt={`${item.title} before cleaning`}
+                        loading="lazy"
+                        width={1024}
+                        height={1024}
+                        className="w-full h-80 object-cover"
+                      />
+                      <div className="absolute top-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider">
+                        Before
+                      </div>
+                    </div>
+                    <div className="relative rounded-2xl overflow-hidden shadow-elevated group">
+                      <img
+                        src={item.after}
+                        alt={`${item.title} after cleaning`}
+                        loading="lazy"
+                        width={1024}
+                        height={1024}
+                        className="w-full h-80 object-cover"
+                      />
+                      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider">
+                        After
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews */}
+        <section className="section-padding bg-background">
+          <div className="container-wide mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Client Reviews
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Trusted by Owners, Operators &{' '}
+                <span className="text-primary">Flight Crews</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {reviews.map((review, i) => (
+                <Card
+                  key={i}
+                  className="bg-card border-border/50 hover:border-primary/30 hover:shadow-elevated transition-all duration-300 hover-lift"
+                >
+                  <CardContent className="p-6">
+                    <Quote className="w-8 h-8 text-primary/30 mb-4" />
+                    <div className="flex gap-1 mb-4">
+                      {Array.from({ length: review.rating }).map((_, idx) => (
+                        <Star key={idx} className="w-4 h-4 fill-primary text-primary" />
+                      ))}
+                    </div>
+                    <p className="text-foreground mb-6 leading-relaxed">"{review.quote}"</p>
+                    <div className="border-t border-border pt-4">
+                      <p className="font-semibold text-foreground">{review.name}</p>
+                      <p className="text-sm text-muted-foreground">{review.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-padding bg-gradient-to-br from-primary to-teal-700 text-primary-foreground relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-lavender-500/20 rounded-full blur-3xl" />
