@@ -1,8 +1,10 @@
-import { HardHat, Sparkles, Shield, Trash2, Droplets, Eye, Wrench } from 'lucide-react';
+import { HardHat, Sparkles, Shield, Trash2, Droplets, Eye, Wrench, Wind, Layers } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
 import hero from '@/assets/construction-hero.jpg';
 import img1 from '@/assets/construction-1.jpg';
 import img2 from '@/assets/construction-2.jpg';
+import img3 from '@/assets/construction-3.jpg';
+import img4 from '@/assets/construction-4.jpg';
 
 const ConstructionPost = () => (
   <ServicePage
@@ -50,6 +52,16 @@ const ConstructionPost = () => (
         title: 'Safety & Site Coordination',
         description: 'OSHA-aligned crews with PPE, jobsite awareness, and coordination with your superintendent.',
       },
+      {
+        icon: Wind,
+        title: 'HVAC & Air Quality Prep',
+        description: 'Vent, register, and filter cleaning to remove construction dust before HVAC commissioning and occupancy.',
+      },
+      {
+        icon: Layers,
+        title: 'Floor Care & Sealing',
+        description: 'Initial polish, buffing, and sealing of concrete, tile, and hardwood floors for a turnover-ready finish.',
+      },
     ]}
     standardsEyebrow="On-Site Standards"
     standardsHeadline="Coordinated with Your"
@@ -69,6 +81,8 @@ const ConstructionPost = () => (
     gallery={[
       { src: img1, alt: 'Post-construction cleanup crew removing debris', label: 'Rough & Debris Removal' },
       { src: img2, alt: 'Newly cleaned home interior ready for handover', label: 'Final Polish & Handover' },
+      { src: img3, alt: 'Newly finished kitchen after final clean', label: 'Kitchen & Cabinet Detail' },
+      { src: img4, alt: 'Freshly cleaned commercial retail buildout', label: 'Commercial Buildout Turnover' },
     ]}
     ctaHeadline="Cleaning the Path to Handover"
     ctaBody="Send us your project schedule and scope—we'll return a proposal built around your handover date."

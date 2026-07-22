@@ -1,8 +1,10 @@
-import { Building2, Sparkles, Shield, ClipboardCheck, Users, FileCheck, Calendar } from 'lucide-react';
+import { Building2, Sparkles, Shield, ClipboardCheck, Users, FileCheck, Calendar, Recycle, Wind } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
 import hero from '@/assets/commercial-hero.jpg';
 import img1 from '@/assets/commercial-1.jpg';
 import img2 from '@/assets/commercial-2.jpg';
+import img3 from '@/assets/commercial-3.jpg';
+import img4 from '@/assets/commercial-4.jpg';
 
 const Commercial = () => (
   <ServicePage
@@ -50,6 +52,16 @@ const Commercial = () => (
         title: 'Scheduled Deep Cleans',
         description: 'Quarterly and annual floor care, window cleaning, and high-dust programs built into your contract.',
       },
+      {
+        icon: Recycle,
+        title: 'Waste & Recycling Management',
+        description: 'Trash removal, recycling program support, and consumables restocking across restrooms and break rooms.',
+      },
+      {
+        icon: Wind,
+        title: 'Electrostatic Disinfection',
+        description: 'Wide-area electrostatic spraying for high-touch surfaces, boardrooms, and shared spaces on demand.',
+      },
     ]}
     standardsEyebrow="Operating Standards"
     standardsHeadline="Accountable, Documented,"
@@ -69,6 +81,8 @@ const Commercial = () => (
     gallery={[
       { src: img1, alt: 'Clean open-plan office', label: 'Office & Workspace Care' },
       { src: img2, alt: 'Uniformed cleaner in commercial lobby', label: 'Lobby & Common Areas' },
+      { src: img3, alt: 'Spotless executive conference room', label: 'Boardrooms & Executive Suites' },
+      { src: img4, alt: 'Sanitized medical exam room', label: 'Healthcare & Clinical Spaces' },
     ]}
     ctaHeadline="Ready to Contract with TNT?"
     ctaBody="Request a scoped proposal for your facility, contract, or multi-site portfolio."
