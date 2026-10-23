@@ -1,30 +1,31 @@
-import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
-import { quoteSchema } from './quote-schema';
-import services from './services.json';
-import { ArrowRight, Loader2 } from 'lucide-react';
+import { business } from './business';
+import { ArrowRight, Clock, Phone } from 'lucide-react';
+
 export default function QuoteForm() {
- const [busy,setBusy]=useState(false); const [error,setError]=useState(''); const [fields,setFields]=useState<Record<string,string>>({});
- const [submissionKey,setSubmissionKey]=useState('');
- async function submit(event:FormEvent<HTMLFormElement>) {
-  event.preventDefault(); const form=event.currentTarget; const values=Object.fromEntries(new FormData(form)); const parsed=quoteSchema.safeParse(values);
-  if(!parsed.success){setFields(Object.fromEntries(parsed.error.issues.map(i=>[String(i.path[0]),i.message])));return;}
-  setFields({}); setError(''); setBusy(true);
-  try { const { supabase }=await import('@/integrations/supabase/client');
-   const key=submissionKey || crypto.randomUUID();setSubmissionKey(key);
-   const {data,error:failed}=await supabase.functions.invoke('submit-quote',{body:{...parsed.data,website:values.website,submission_key:key}});
-   if(failed || !data?.id) throw new Error('failed');
-   sessionStorage.setItem('tnt-quote-reference',data.id); window.location.assign('/thank-you');
-  } catch {setError('Your request could not be sent. Please try again or call (210) 807-1968.');setBusy(false);}
- }
- const input='w-full rounded-md border border-input bg-background px-3 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring';
- return <form onSubmit={submit} noValidate className="space-y-6">
-  <div className="grid gap-5 sm:grid-cols-2">{[['name','Name',100,'text'],['phone','Phone',30,'tel'],['email','Email',255,'email'],['location','Property location',250,'text']].map(([name,label,max,type])=><label key={name} className="block text-sm font-medium">{label}<input required name={String(name)} type={String(type)} maxLength={Number(max)} autoComplete={name==='name'?'name':name==='phone'?'tel':name==='email'?'email':'off'} aria-invalid={Boolean(fields[String(name)])} className={input+' mt-2'} />{fields[String(name)]&&<span className="mt-1 block text-destructive">{fields[String(name)]}</span>}</label>)}</div>
-  <label className="block text-sm font-medium">Service needed<select name="service" required defaultValue="" className={input+' mt-2'}><option value="" disabled>Select a service</option>{services.map(s=><option key={s.path}>{s.title}</option>)}<option>Other / upcoming California availability</option></select>{fields.service&&<span className="block text-destructive">{fields.service}</span>}</label>
-  <label className="block text-sm font-medium">Project details<textarea name="details" required rows={5} maxLength={4000} className={input+' mt-2'} placeholder="Property size, timing, cleaning priorities and access requirements"/>{fields.details&&<span className="block text-destructive">{fields.details}</span>}</label>
-  <div hidden aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
-  <p className="text-sm text-muted-foreground">By submitting, you agree that TNT Domestics may contact you about this request. Your details are used to review and respond to your project.</p>
-  {error&&<p role="alert" className="text-destructive">{error}</p>}
-  <Button type="submit" size="lg" disabled={busy}>{busy?<Loader2 className="animate-spin"/>:<ArrowRight/>}{busy?'Sending…':'Send Quote Request'}</Button>
- </form>;
+  return (
+    <div className="border border-border rounded-lg bg-card p-8 space-y-6">
+      <div>
+        <p className="eyebrow">Request a quote</p>
+        <h2 className="font-display text-3xl mb-3">Tell us about your property.</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Open our quote request form to share your service, property location and project
+          details. We review every request and respond {business.response} with the scope,
+          price and schedule before booking.
+        </p>
+      </div>
+      <ul className="space-y-3 text-sm text-muted-foreground">
+        <li className="flex items-start gap-2"><Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />Response {business.response}, {business.hours.toLowerCase()}.</li>
+        <li className="flex items-start gap-2"><Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />Prefer to call? {business.phone}</li>
+      </ul>
+      <Button asChild size="lg" className="w-full">
+        <a href={business.quotePath} target="_blank" rel="noopener noreferrer">
+          Open Quote Request Form<ArrowRight />
+        </a>
+      </Button>
+      <p className="text-xs text-muted-foreground">
+        The form opens in a new tab. Submission does not confirm a booking.
+      </p>
+    </div>
+  );
 }
