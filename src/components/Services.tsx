@@ -53,11 +53,11 @@ const Services = () => {
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Structured for{' '}
-            <span className="text-primary">Discerning Clients</span>
+            <span className="text-primary">Demanding Standards</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Our services are intentionally structured to meet the expectations of discerning 
-            clients and regulated environments.
+            Our services are intentionally structured to meet the expectations of clients
+            and regulated environments where detail is non-negotiable.
           </p>
         </div>
 
