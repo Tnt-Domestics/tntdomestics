@@ -5,12 +5,14 @@ import services from './services.json';
 import { ArrowRight, Loader2 } from 'lucide-react';
 export default function QuoteForm() {
  const [busy,setBusy]=useState(false); const [error,setError]=useState(''); const [fields,setFields]=useState<Record<string,string>>({});
+ const [submissionKey,setSubmissionKey]=useState('');
  async function submit(event:FormEvent<HTMLFormElement>) {
   event.preventDefault(); const form=event.currentTarget; const values=Object.fromEntries(new FormData(form)); const parsed=quoteSchema.safeParse(values);
   if(!parsed.success){setFields(Object.fromEntries(parsed.error.issues.map(i=>[String(i.path[0]),i.message])));return;}
   setFields({}); setError(''); setBusy(true);
   try { const { supabase }=await import('@/integrations/supabase/client');
-   const {data,error:failed}=await supabase.functions.invoke('submit-quote',{body:{...parsed.data,website:values.website,submission_key:crypto.randomUUID()}});
+   const key=submissionKey || crypto.randomUUID();setSubmissionKey(key);
+   const {data,error:failed}=await supabase.functions.invoke('submit-quote',{body:{...parsed.data,website:values.website,submission_key:key}});
    if(failed || !data?.id) throw new Error('failed');
    sessionStorage.setItem('tnt-quote-reference',data.id); window.location.assign('/thank-you');
   } catch {setError('Your request could not be sent. Please try again or call (210) 807-1968.');setBusy(false);}
