@@ -6,7 +6,7 @@ describe('business requirements',()=>{
  it('keeps the exact phone identity',()=>{expect(business.phone).toBe('(210) 807-1968');expect(business.telephone).toBe('+1-210-807-1968');});
  it('keeps the Google hours',()=>{expect(business.openingHours).toEqual(['Mo-Fr 08:00-19:00','Sa 08:00-18:00']);expect(business.hours).toBe('Mon–Fri 8 AM–7 PM, Sat 8 AM–6 PM');});
  it('lists only active states in areaServed',()=>{expect(business.areaServed).toEqual(['Texas','Hawaii']);});
- it('routes quote requests internally',()=>{expect(business.quotePath).toBe('/contact');});
+ it('routes quote requests to the public Google Form',()=>{expect(business.quotePath).toBe('https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform');});
  it('retains the legal name',()=>{expect(business.legalName).toBe('Tara Sydnor DBA TNT Domestics');});
  it('maps all five legacy service URLs',()=>{expect(Object.keys(aliases)).toHaveLength(5);for(const target of Object.values(aliases))expect(services.some(s=>s.path===target)).toBe(true);});
 });

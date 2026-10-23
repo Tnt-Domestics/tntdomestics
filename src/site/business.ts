@@ -2,7 +2,7 @@ export const business = {
  name: 'TNT Domestics', legalName: 'Tara Sydnor DBA TNT Domestics', phone: '(210) 807-1968', telephone: '+1-210-807-1968',
  url: 'https://www.tntdomestics.com', google: 'https://share.google/P3jgf95vI4NxFNOHB',
  hours: 'Mon–Fri 8 AM–7 PM, Sat 8 AM–6 PM', openingHours: ['Mo-Fr 08:00-19:00', 'Sa 08:00-18:00'],
- areaServed: ['Texas', 'Hawaii'], quotePath: '/contact', response: 'within 24 business hours',
+ areaServed: ['Texas', 'Hawaii'], quotePath: 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform', response: 'within 24 business hours',
 };
 export const homeFaqs = [
  ['What areas do you serve?', 'TNT Domestics serves Texas and Hawaii. Based in San Antonio, we serve Alamo Heights, Olmos Park, Terrell Hills and Boerne, plus high-end service in Austin, Dallas and Houston. California expansion is upcoming; contact us about availability.'],
