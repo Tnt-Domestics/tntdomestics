@@ -1,4 +1,3 @@
-// @vitest-environment node
 import { describe, it, expect } from 'vitest';
 import { publicRoutes, renderPage } from '../site/render';
 describe('static public pages',()=>{
