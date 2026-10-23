@@ -18,7 +18,7 @@ export function getPage(path:string){
  if(service)return {...service,kind:'service',path:normalized};
  const area=areas[normalized as keyof typeof areas];if(area)return {...area,kind:'area',path:normalized};
  const meta:Record<string,{title:string;description:string}>={
- '/':{title:'TNT Domestics | Cleaning Contractor in Texas & Hawaii',description:'Post-construction, commercial, government and luxury residential cleaning. San Antonio-based TNT Domestics serves Texas and Hawaii. Request a tailored quote.'},
+ '/':{title:'TNT Domestics | Cleaning Contractor in Texas, California & Hawaii',description:'Post-construction, commercial, government and luxury residential cleaning. San Antonio-based TNT Domestics serves Texas, California and Hawaii. Request a tailored quote.'},
  '/about':{title:'About TNT Domestics | Tara Sydnor & Credentials',description:'Meet Tara Sydnor, Project Manager at TNT Domestics, and learn about our cleaning services, certifications and government contracting credentials.'},
  '/contact':{title:'Request a Cleaning Quote | TNT Domestics',description:'Request a tailored cleaning quote in Texas or Hawaii. Contact TNT Domestics at (210) 807-1968 or send your property and project details online.'},
  '/thank-you':{title:'Quote Request Received | TNT Domestics',description:'Thank you for contacting TNT Domestics. We review quote requests and respond within 24 business hours.'},
