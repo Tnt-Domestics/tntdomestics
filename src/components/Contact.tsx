@@ -53,9 +53,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Service Area</p>
-                  <p className="text-lg font-semibold">Texas & Hawaii</p>
+                  <p className="text-lg font-semibold">Texas, California &amp; Hawaii</p>
                 </div>
               </div>
+
+              <p className="text-sm text-primary-foreground/60 pl-16 leading-relaxed">
+                San Antonio, Austin, Dallas, Houston, San Francisco Bay Area, Los Angeles &amp;
+                Orange County, San Diego, Sacramento, and across Hawaii.
+              </p>
             </div>
 
             <p className="text-primary-foreground/70 mb-2">Project Manager</p>

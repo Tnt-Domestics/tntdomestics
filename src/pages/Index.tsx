@@ -5,6 +5,7 @@ import Services from '@/components/Services';
 import Standards from '@/components/Standards';
 import Credentials from '@/components/Credentials';
 import Clients from '@/components/Clients';
+import GoogleReviews from '@/components/GoogleReviews';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -20,6 +21,7 @@ const Index = () => {
         <Standards />
         <Credentials />
         <Clients />
+        <GoogleReviews />
         <WhyChooseUs />
         <Contact />
       </main>
