@@ -17,11 +17,11 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <GoogleReviews />
         <Services />
         <Standards />
         <Credentials />
         <Clients />
-        <GoogleReviews />
         <WhyChooseUs />
         <Contact />
       </main>
