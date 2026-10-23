@@ -8,6 +8,7 @@ const Footer = () => {
     { label: 'Services', href: '#services' },
     { label: 'Standards', href: '#standards' },
     { label: 'Credentials', href: '#credentials' },
+    { label: 'Reviews', href: '#reviews' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -81,7 +82,17 @@ const Footer = () => {
                   Email Us
                 </a>
               </p>
-              <p className="pt-2">Texas & Hawaii</p>
+              <p className="pt-2">Texas, California &amp; Hawaii</p>
+              <p>
+                <a
+                  href="https://share.google/P3jgf95vI4NxFNOHB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  Google Reviews
+                </a>
+              </p>
             </div>
           </div>
         </div>
