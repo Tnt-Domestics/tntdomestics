@@ -81,7 +81,7 @@ const Footer = () => {
                   Email Us
                 </a>
               </p>
-              <p className="pt-2">Texas, California & Hawaii</p>
+              <p className="pt-2">Texas & Hawaii</p>
             </div>
           </div>
         </div>

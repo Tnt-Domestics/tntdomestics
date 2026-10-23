@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Service Area</p>
-                  <p className="text-lg font-semibold">Texas, California & Hawaii</p>
+                  <p className="text-lg font-semibold">Texas & Hawaii</p>
                 </div>
               </div>
             </div>
