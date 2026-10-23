@@ -55,7 +55,7 @@ const Standards = () => {
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Our Reputation is Built on{' '}
-              <span className="text-primary">Performance</span>, Not Promises
+              <span className="text-primary">Performance</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               Every service is executed with an emphasis on health, safety, consistency, 
