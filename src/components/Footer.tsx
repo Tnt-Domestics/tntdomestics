@@ -73,8 +73,8 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-primary-foreground/70">
               <p>Tara Sydnor, Project Manager</p>
               <p>
-                <a href="tel:210-807-1968" className="hover:text-primary transition-colors">
-                  210-807-1968
+                <a href="tel:830-500-5791" className="hover:text-primary transition-colors">
+                  830-500-5791
                 </a>
               </p>
               <p>

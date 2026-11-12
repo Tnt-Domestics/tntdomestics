@@ -37,9 +37,9 @@ const Header = () => {
       <div className="hidden md:block bg-primary text-primary-foreground">
         <div className="container-wide mx-auto px-6 py-2 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:210-807-1968" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="tel:830-500-5791" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Phone className="w-4 h-4" />
-              210-807-1968
+              830-500-5791
             </a>
             <a href="mailto:tntdomestics2023@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="w-4 h-4" />
@@ -108,7 +108,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 pt-3">
-                <a href="tel:210-807-1968" className="text-sm text-muted-foreground py-1">📞 210-807-1968</a>
+                <a href="tel:830-500-5791" className="text-sm text-muted-foreground py-1">📞 830-500-5791</a>
                 <a href="mailto:tntdomestics2023@gmail.com" className="text-sm text-muted-foreground py-1">✉️ Email Us</a>
               </div>
               <Button variant="default" className="mt-3" asChild>
