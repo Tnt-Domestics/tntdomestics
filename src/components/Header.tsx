@@ -25,10 +25,14 @@ const Header = () => {
     { label: 'Contact', href: '/#contact' },
   ];
 
+  const solid = isScrolled || isMobileMenuOpen;
+  const linkColor = solid ? 'text-foreground/80 hover:text-primary' : 'text-white/90 hover:text-white';
+  const underline = solid ? 'after:bg-primary' : 'after:bg-white';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen
+        solid
           ? 'bg-card/95 backdrop-blur-md shadow-soft'
           : 'bg-transparent'
       }`}
@@ -61,8 +65,8 @@ const Header = () => {
               className="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:block">
-              <span className="block text-xl font-bold text-primary leading-tight">TNT Domestics</span>
-              <span className="text-xs text-muted-foreground tracking-wide">Professional Cleaning Services</span>
+              <span className={`block text-xl font-bold leading-tight transition-colors ${solid ? 'text-primary' : 'text-white'}`}>TNT Domestics</span>
+              <span className={`text-xs tracking-wide transition-colors ${solid ? 'text-muted-foreground' : 'text-white/70'}`}>Professional Cleaning Services</span>
             </div>
           </a>
 
@@ -72,7 +76,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                className={`text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all hover:after:w-full ${linkColor} ${underline}`}
               >
                 {link.label}
               </a>
@@ -86,7 +90,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className={`lg:hidden p-2 transition-colors ${solid ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
