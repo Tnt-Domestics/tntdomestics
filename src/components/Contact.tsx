@@ -85,11 +85,6 @@ const Contact = () => {
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full" asChild>
-                <Link to="/book/">
-                  Schedule a Private Consultation
-                </Link>
-              </Button>
             </div>
 
             <p className="text-xs text-muted-foreground text-center mt-6">

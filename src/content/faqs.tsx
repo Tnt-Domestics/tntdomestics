@@ -38,11 +38,11 @@ export const governmentFaqs: Faq[] = [
 ];
 
 export const residentialFaqs: Faq[] = [
-  { q: 'How much does a house cleaning service cost in San Antonio?', a: 'Cost depends on home size, condition, frequency and special surfaces. TNT Domestics quotes each home after a private consultation and puts scope and pricing in a signed service agreement.' },
+  { q: 'How much does a house cleaning service cost in San Antonio?', a: 'Cost depends on home size, condition, frequency and special surfaces. TNT Domestics quotes each home after reviewing your property, then puts scope and pricing in a signed service agreement.' },
   { q: 'Are your house cleaners background-checked?', a: 'Yes. All residential personnel are background-checked and sign non-disclosure agreements.' },
   { q: 'Do you bring your own supplies?', a: 'Yes. We bring professional equipment and material-safe products, and can use non-toxic or fragrance-free products on request.' },
   { q: 'Will I have a consistent point of contact?', a: 'Yes. Every residence has a direct point of contact and a written care plan, so your preferences are documented and followed at every visit.' },
-  { q: 'How often should I schedule luxury house cleaning?', a: 'The right frequency depends on household activity, property size and how you use the residence. We offer daily, weekly and bi-weekly housekeeping programs, as well as seasonal deep cleaning. Your consultation establishes the cadence and tasks in a written care plan.' },
+  { q: 'How often should I schedule luxury house cleaning?', a: 'The right frequency depends on household activity, property size and how you use the residence. We offer daily, weekly and bi-weekly housekeeping programs, as well as seasonal deep cleaning. Your written care plan sets the cadence and tasks once we review the residence.' },
   { q: 'How do you clean marble, natural stone, hardwood and brass?', a: 'We select cleaning products and techniques for the specific material rather than using one product throughout the home. Your written care plan records fine finishes and special surface requirements so those details guide the service.' },
   { q: 'What is included in an estate cleaning care plan?', a: 'Your care plan documents the agreed cleaning scope, schedule, household preferences and requirements for specialty surfaces. A direct point of contact coordinates those details, with service logs and a written agreement setting clear expectations.' },
   { q: 'Do you clean second homes and prepare residences for events?', a: 'Yes. TNT Domestics serves estates, penthouses and second homes, and offers event preparation and post-event cleaning. Tell us how the residence is used and the timing of your arrival or event so the requested work can be scoped.' },

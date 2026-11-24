@@ -97,16 +97,6 @@ const PrivateJet = () => {
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                  asChild
-                >
-                  <Link to="/book/" search={{ service: "aviation" }}>
-                    Schedule a Private Consultation
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>

@@ -88,7 +88,7 @@ const Residential = () => (
     ]}
     ctaHeadline="Bring TNT Into Your Home"
     faqs={residentialFaqs}
-    ctaBody="Schedule a private consultation to design a cleaning program tailored to your residence and household routine."
+    ctaBody="Tell us about your residence and household routine—we'll design a cleaning program around it."
   />
 );
 
