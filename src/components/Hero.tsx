@@ -61,6 +61,14 @@ const Hero = () => {
               <Shield className="w-5 h-5 text-accent" />
               <span className="text-sm">SAM Registered</span>
             </div>
+            <div className="flex items-center gap-2 text-primary-foreground/70">
+              <Shield className="w-5 h-5 text-accent" />
+              <span className="text-sm">Insured</span>
+            </div>
+            <div className="flex items-center gap-2 text-primary-foreground/70">
+              <Award className="w-5 h-5 text-accent" />
+              <span className="text-sm">OSHA Certified</span>
+            </div>
           </div>
 
           {/* Tagline */}
