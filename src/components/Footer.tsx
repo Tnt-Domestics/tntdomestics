@@ -1,24 +1,29 @@
+import { Link } from '@tanstack/react-router';
 import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Standards', href: '#standards' },
-    { label: 'Credentials', href: '#credentials' },
-    { label: 'Reviews', href: '#reviews' },
-    { label: 'Contact', href: '#contact' },
-  ];
+    { label: 'About Us', href: '/about/' },
+    { label: 'Service Areas', href: '/service-areas/' },
+    { label: 'San Antonio', href: '/service-areas/san-antonio/' },
+    { label: 'Austin', href: '/service-areas/austin/' },
+    { label: 'California', href: '/service-areas/california/' },
+    { label: 'Hawaii', href: '/service-areas/hawaii/' },
+    { label: 'FAQ', href: '/faq/' },
+    { label: 'Book a Cleaning', href: '/book/' },
+    { label: 'Contact', href: '/contact/' },
+  ] as const;
 
   const services = [
-    'Post-Construction Cleaning',
-    'Commercial Cleaning',
-    'Government Facility Cleaning',
-    'Luxury Residential',
-    'Move-In/Move-Out',
-  ];
+    { label: 'Post-Construction Cleaning', href: '/post-construction/' },
+    { label: 'Commercial Cleaning', href: '/commercial/' },
+    { label: 'Government Facility Cleaning', href: '/government-cleaning/' },
+    { label: 'Luxury Residential', href: '/residential/' },
+    { label: 'Move-In/Move-Out', href: '/move-in-move-out/' },
+    { label: 'Private Jet Cleaning', href: '/aviation/' },
+  ] as const;
 
   return (
     <footer className="bg-foreground text-primary-foreground pt-16 pb-8">
@@ -44,12 +49,9 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href} 
-                    className="text-primary-foreground/70 hover:text-primary transition-colors text-sm"
-                  >
+                  <Link to={link.href} className="text-primary-foreground/70 hover:text-primary transition-colors text-sm">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -60,8 +62,10 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service}>
-                  <span className="text-primary-foreground/70 text-sm">{service}</span>
+                <li key={service.href}>
+                  <Link to={service.href} className="text-primary-foreground/70 hover:text-primary transition-colors text-sm">
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -78,7 +82,7 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                <a href="mailto:tntdomestics2023@gmail.com" className="hover:text-primary transition-colors">
+                <a href="mailto:management@tntdomestics.com" className="hover:text-primary transition-colors">
                   Email Us
                 </a>
               </p>

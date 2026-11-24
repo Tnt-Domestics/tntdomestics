@@ -1,9 +1,11 @@
-import { ArrowRight, Plane, Sparkles, Shield, Clock, Award, CheckCircle2, Gem, Eye, Wind, Star, Quote } from 'lucide-react';
+import { ArrowRight, Plane, Sparkles, Shield, Clock, Award, CheckCircle2, Gem, Eye, Wind } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FaqSection from '@/components/FaqSection';
+import { aviationFaqs } from '@/content/faqs';
 import jetHero from '@/assets/jet-hero.jpg';
 import jetAfter1 from '@/assets/jet-after-1.jpg';
 import jetAfter2 from '@/assets/jet-after-2.jpg';
@@ -56,29 +58,6 @@ const PrivateJet = () => {
   ];
 
 
-  const reviews = [
-    {
-      name: 'Marcus Delaney',
-      role: 'Charter Operations Director',
-      rating: 5,
-      quote:
-        'TNT turned around three aircraft between charters without missing a beat. The cabins looked showroom-new and my principals noticed immediately.',
-    },
-    {
-      name: 'Elena Vasquez',
-      role: 'Private Aircraft Owner',
-      rating: 5,
-      quote:
-        'Discreet, professional, and meticulous. They treat my jet like it belongs to them. I will never use another cleaning team.',
-    },
-    {
-      name: 'Captain James Reid',
-      role: 'Corporate Flight Department',
-      rating: 5,
-      quote:
-        'FOD-conscious, aviation-approved products, and on-time every single turn. TNT is the gold standard for aircraft cleaning.',
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -304,43 +283,7 @@ const PrivateJet = () => {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section className="section-padding bg-background">
-          <div className="container-wide mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Client Reviews
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Trusted by Owners, Operators &{' '}
-                <span className="text-primary">Flight Crews</span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {reviews.map((review, i) => (
-                <Card
-                  key={i}
-                  className="bg-card border-border/50 hover:border-primary/30 hover:shadow-elevated transition-all duration-300 hover-lift"
-                >
-                  <CardContent className="p-6">
-                    <Quote className="w-8 h-8 text-primary/30 mb-4" />
-                    <div className="flex gap-1 mb-4">
-                      {Array.from({ length: review.rating }).map((_, idx) => (
-                        <Star key={idx} className="w-4 h-4 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-6 leading-relaxed">"{review.quote}"</p>
-                    <div className="border-t border-border pt-4">
-                      <p className="font-semibold text-foreground">{review.name}</p>
-                      <p className="text-sm text-muted-foreground">{review.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        <FaqSection faqs={aviationFaqs} />
 
         {/* CTA */}
         <section className="section-padding bg-gradient-to-br from-primary to-teal-700 text-primary-foreground relative overflow-hidden">

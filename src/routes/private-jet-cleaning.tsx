@@ -7,7 +7,7 @@ export const Route = createFileRoute("/private-jet-cleaning")({
       { title: "Private Jet & Aviation Cleaning | TNT Domestics" },
       { name: "description", content: "Aircraft interior detailing, cabin sanitization, exterior wash and post-charter turnaround across Texas, California & Hawaii." },
     ],
-    links: [{ rel: "canonical", href: "https://tntdomestics.com/aviation" }],
+    links: [{ rel: "canonical", href: "https://tntdomestics.com/aviation/" }],
   }),
   component: PrivateJet,
 });

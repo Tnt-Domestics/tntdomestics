@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from '@tanstack/react-router';
 import logo from '@/assets/logo.png';
 
 const Header = () => {
@@ -16,14 +17,15 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '/#about' },
-    { label: 'Residential', href: '/residential' },
-    { label: 'Commercial', href: '/commercial' },
-    { label: 'Post-Construction', href: '/post-construction' },
-    { label: 'Aviation', href: '/aviation' },
-    { label: 'Credentials', href: '/#credentials' },
-    { label: 'Contact', href: '/#contact' },
-  ];
+    { label: 'About', href: '/about/' },
+    { label: 'Residential', href: '/residential/' },
+    { label: 'Commercial', href: '/commercial/' },
+    { label: 'Government', href: '/government-cleaning/' },
+    { label: 'Post-Construction', href: '/post-construction/' },
+    { label: 'Aviation', href: '/aviation/' },
+    { label: 'Service Areas', href: '/service-areas/' },
+    { label: 'Contact', href: '/contact/' },
+  ] as const;
 
   const solid = isScrolled || isMobileMenuOpen;
   const linkColor = solid ? 'text-foreground/80 hover:text-primary' : 'text-white/90 hover:text-white';
@@ -45,7 +47,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               830-500-5791
             </a>
-            <a href="mailto:tntdomestics2023@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <a href="mailto:management@tntdomestics.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Mail className="w-4 h-4" />
               Email Us
             </a>
@@ -58,7 +60,7 @@ const Header = () => {
       <nav className="container-wide mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="TNT Domestics"
@@ -68,18 +70,18 @@ const Header = () => {
               <span className={`block text-xl font-bold leading-tight transition-colors ${solid ? 'text-primary' : 'text-white'}`}>TNT Domestics</span>
               <span className={`text-xs tracking-wide transition-colors ${solid ? 'text-muted-foreground' : 'text-white/70'}`}>Professional Cleaning Services</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className={`text-sm font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all hover:after:w-full ${linkColor} ${underline}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button variant="default" size="sm" className="ml-4" asChild>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
@@ -90,7 +92,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 transition-colors ${solid ? 'text-foreground' : 'text-white'}`}
+            className={`xl:hidden p-2 transition-colors ${solid ? 'text-foreground' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -99,21 +101,21 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border animate-fade-in bg-card/95 backdrop-blur-md -mx-6 px-6 rounded-b-xl">
+          <div className="xl:hidden mt-4 pb-4 border-t border-border animate-fade-in bg-card/95 backdrop-blur-md -mx-6 px-6 rounded-b-xl">
             <div className="flex flex-col gap-1 pt-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-foreground/80 hover:text-primary transition-colors py-3 border-b border-border/50 last:border-b-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <div className="flex flex-col gap-2 pt-3">
                 <a href="tel:830-500-5791" className="text-sm text-muted-foreground py-1">📞 830-500-5791</a>
-                <a href="mailto:tntdomestics2023@gmail.com" className="text-sm text-muted-foreground py-1">✉️ Email Us</a>
+                <a href="mailto:management@tntdomestics.com" className="text-sm text-muted-foreground py-1">✉️ Email Us</a>
               </div>
               <Button variant="default" className="mt-3" asChild>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>

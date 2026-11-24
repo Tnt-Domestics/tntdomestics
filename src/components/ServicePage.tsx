@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FaqSection, { type Faq } from '@/components/FaqSection';
 
 const QUOTE_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform';
@@ -46,6 +47,7 @@ type Props = {
   gallery: GalleryItem[];
   ctaHeadline: string;
   ctaBody: string;
+  faqs?: Faq[];
 };
 
 const ServicePage = ({
@@ -74,6 +76,7 @@ const ServicePage = ({
   gallery,
   ctaHeadline,
   ctaBody,
+  faqs,
 }: Props) => {
   return (
     <div className="min-h-screen bg-background">
@@ -237,6 +240,8 @@ const ServicePage = ({
             </div>
           </div>
         </section>
+
+        {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
 
         {/* CTA */}
         <section className="section-padding bg-gradient-to-br from-primary to-teal-700 text-primary-foreground relative overflow-hidden">

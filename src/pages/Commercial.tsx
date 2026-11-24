@@ -1,5 +1,6 @@
 import { Building2, Sparkles, Shield, ClipboardCheck, Users, FileCheck, Calendar, Recycle, Wind } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
+import { commercialFaqs } from '@/content/faqs';
 import hero from '@/assets/commercial-hero.jpg';
 import img1 from '@/assets/commercial-1.jpg';
 import img2 from '@/assets/commercial-2.jpg';
@@ -85,6 +86,7 @@ const Commercial = () => (
       { src: img4, alt: 'Sanitized medical exam room', label: 'Healthcare & Clinical Spaces' },
     ]}
     ctaHeadline="Ready to Contract with TNT?"
+    faqs={commercialFaqs}
     ctaBody="Request a scoped proposal for your facility, contract, or multi-site portfolio."
   />
 );

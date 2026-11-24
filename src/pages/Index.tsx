@@ -9,6 +9,8 @@ import GoogleReviews from '@/components/GoogleReviews';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import FaqSection from '@/components/FaqSection';
+import { homeFaqs } from '@/content/faqs';
 
 const Index = () => {
   return (
@@ -23,6 +25,7 @@ const Index = () => {
         <Credentials />
         <Clients />
         <WhyChooseUs />
+        <FaqSection faqs={homeFaqs} className="bg-muted/30" />
         <Contact />
       </main>
       <Footer />

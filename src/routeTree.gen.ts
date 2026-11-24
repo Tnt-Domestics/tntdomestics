@@ -10,15 +10,31 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AviationRouteImport } from './routes/aviation'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as CommercialRouteImport } from './routes/commercial'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GovernmentCleaningRouteImport } from './routes/government-cleaning'
+import { Route as MoveInMoveOutRouteImport } from './routes/move-in-move-out'
 import { Route as PostConstructionRouteImport } from './routes/post-construction'
 import { Route as PrivateJetCleaningRouteImport } from './routes/private-jet-cleaning'
 import { Route as ResidentialRouteImport } from './routes/residential'
+import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas/index'
+import { Route as ServiceAreasAustinRouteImport } from './routes/service-areas/austin'
+import { Route as ServiceAreasCaliforniaRouteImport } from './routes/service-areas/california'
+import { Route as ServiceAreasHawaiiRouteImport } from './routes/service-areas/hawaii'
+import { Route as ServiceAreasSanAntonioRouteImport } from './routes/service-areas/san-antonio'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AviationRoute = AviationRouteImport.update({
@@ -26,9 +42,34 @@ const AviationRoute = AviationRouteImport.update({
   path: '/aviation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CommercialRoute = CommercialRouteImport.update({
   id: '/commercial',
   path: '/commercial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovernmentCleaningRoute = GovernmentCleaningRouteImport.update({
+  id: '/government-cleaning',
+  path: '/government-cleaning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoveInMoveOutRoute = MoveInMoveOutRouteImport.update({
+  id: '/move-in-move-out',
+  path: '/move-in-move-out',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PostConstructionRoute = PostConstructionRouteImport.update({
@@ -46,66 +87,168 @@ const ResidentialRoute = ResidentialRouteImport.update({
   path: '/residential',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
+  id: '/service-areas/',
+  path: '/service-areas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasAustinRoute = ServiceAreasAustinRouteImport.update({
+  id: '/service-areas/austin',
+  path: '/service-areas/austin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasCaliforniaRoute = ServiceAreasCaliforniaRouteImport.update({
+  id: '/service-areas/california',
+  path: '/service-areas/california',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasHawaiiRoute = ServiceAreasHawaiiRouteImport.update({
+  id: '/service-areas/hawaii',
+  path: '/service-areas/hawaii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasSanAntonioRoute = ServiceAreasSanAntonioRouteImport.update({
+  id: '/service-areas/san-antonio',
+  path: '/service-areas/san-antonio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aviation': typeof AviationRoute
+  '/book': typeof BookRoute
   '/commercial': typeof CommercialRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/government-cleaning': typeof GovernmentCleaningRoute
+  '/move-in-move-out': typeof MoveInMoveOutRoute
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/service-areas/austin': typeof ServiceAreasAustinRoute
+  '/service-areas/california': typeof ServiceAreasCaliforniaRoute
+  '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
+  '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aviation': typeof AviationRoute
+  '/book': typeof BookRoute
   '/commercial': typeof CommercialRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/government-cleaning': typeof GovernmentCleaningRoute
+  '/move-in-move-out': typeof MoveInMoveOutRoute
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/service-areas/austin': typeof ServiceAreasAustinRoute
+  '/service-areas/california': typeof ServiceAreasCaliforniaRoute
+  '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
+  '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
+  '/service-areas': typeof ServiceAreasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/aviation': typeof AviationRoute
+  '/book': typeof BookRoute
   '/commercial': typeof CommercialRoute
+  '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
+  '/government-cleaning': typeof GovernmentCleaningRoute
+  '/move-in-move-out': typeof MoveInMoveOutRoute
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/service-areas/austin': typeof ServiceAreasAustinRoute
+  '/service-areas/california': typeof ServiceAreasCaliforniaRoute
+  '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
+  '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
+  '/service-areas/': typeof ServiceAreasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/aviation'
+    | '/book'
     | '/commercial'
+    | '/contact'
+    | '/faq'
+    | '/government-cleaning'
+    | '/move-in-move-out'
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/service-areas/austin'
+    | '/service-areas/california'
+    | '/service-areas/hawaii'
+    | '/service-areas/san-antonio'
+    | '/service-areas/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/aviation'
+    | '/book'
     | '/commercial'
+    | '/contact'
+    | '/faq'
+    | '/government-cleaning'
+    | '/move-in-move-out'
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/service-areas/austin'
+    | '/service-areas/california'
+    | '/service-areas/hawaii'
+    | '/service-areas/san-antonio'
+    | '/service-areas'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/aviation'
+    | '/book'
     | '/commercial'
+    | '/contact'
+    | '/faq'
+    | '/government-cleaning'
+    | '/move-in-move-out'
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/service-areas/austin'
+    | '/service-areas/california'
+    | '/service-areas/hawaii'
+    | '/service-areas/san-antonio'
+    | '/service-areas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AviationRoute: typeof AviationRoute
+  BookRoute: typeof BookRoute
   CommercialRoute: typeof CommercialRoute
+  ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
+  GovernmentCleaningRoute: typeof GovernmentCleaningRoute
+  MoveInMoveOutRoute: typeof MoveInMoveOutRoute
   PostConstructionRoute: typeof PostConstructionRoute
   PrivateJetCleaningRoute: typeof PrivateJetCleaningRoute
   ResidentialRoute: typeof ResidentialRoute
+  ServiceAreasAustinRoute: typeof ServiceAreasAustinRoute
+  ServiceAreasCaliforniaRoute: typeof ServiceAreasCaliforniaRoute
+  ServiceAreasHawaiiRoute: typeof ServiceAreasHawaiiRoute
+  ServiceAreasSanAntonioRoute: typeof ServiceAreasSanAntonioRoute
+  ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -117,6 +260,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aviation': {
       id: '/aviation'
       path: '/aviation'
@@ -124,11 +274,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AviationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/commercial': {
       id: '/commercial'
       path: '/commercial'
       fullPath: '/commercial'
       preLoaderRoute: typeof CommercialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/government-cleaning': {
+      id: '/government-cleaning'
+      path: '/government-cleaning'
+      fullPath: '/government-cleaning'
+      preLoaderRoute: typeof GovernmentCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/move-in-move-out': {
+      id: '/move-in-move-out'
+      path: '/move-in-move-out'
+      fullPath: '/move-in-move-out'
+      preLoaderRoute: typeof MoveInMoveOutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/post-construction': {
@@ -152,16 +337,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResidentialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-areas/': {
+      id: '/service-areas/'
+      path: '/service-areas'
+      fullPath: '/service-areas/'
+      preLoaderRoute: typeof ServiceAreasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/austin': {
+      id: '/service-areas/austin'
+      path: '/service-areas/austin'
+      fullPath: '/service-areas/austin'
+      preLoaderRoute: typeof ServiceAreasAustinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/california': {
+      id: '/service-areas/california'
+      path: '/service-areas/california'
+      fullPath: '/service-areas/california'
+      preLoaderRoute: typeof ServiceAreasCaliforniaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/hawaii': {
+      id: '/service-areas/hawaii'
+      path: '/service-areas/hawaii'
+      fullPath: '/service-areas/hawaii'
+      preLoaderRoute: typeof ServiceAreasHawaiiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas/san-antonio': {
+      id: '/service-areas/san-antonio'
+      path: '/service-areas/san-antonio'
+      fullPath: '/service-areas/san-antonio'
+      preLoaderRoute: typeof ServiceAreasSanAntonioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AviationRoute: AviationRoute,
+  BookRoute: BookRoute,
   CommercialRoute: CommercialRoute,
+  ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
+  GovernmentCleaningRoute: GovernmentCleaningRoute,
+  MoveInMoveOutRoute: MoveInMoveOutRoute,
   PostConstructionRoute: PostConstructionRoute,
   PrivateJetCleaningRoute: PrivateJetCleaningRoute,
   ResidentialRoute: ResidentialRoute,
+  ServiceAreasAustinRoute: ServiceAreasAustinRoute,
+  ServiceAreasCaliforniaRoute: ServiceAreasCaliforniaRoute,
+  ServiceAreasHawaiiRoute: ServiceAreasHawaiiRoute,
+  ServiceAreasSanAntonioRoute: ServiceAreasSanAntonioRoute,
+  ServiceAreasIndexRoute: ServiceAreasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

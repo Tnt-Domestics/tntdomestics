@@ -1,5 +1,6 @@
 import { Home, Sparkles, Shield, Gem, Key, Calendar, Leaf, Shirt, Wine } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
+import { residentialFaqs } from '@/content/faqs';
 import hero from '@/assets/residential-hero.jpg';
 import img1 from '@/assets/residential-1.jpg';
 import img2 from '@/assets/residential-2.jpg';
@@ -85,6 +86,7 @@ const Residential = () => (
       { src: img4, alt: 'Polished formal living room', label: 'Living Areas & Fine Finishes' },
     ]}
     ctaHeadline="Bring TNT Into Your Home"
+    faqs={residentialFaqs}
     ctaBody="Schedule a private consultation to design a cleaning program tailored to your residence and household routine."
   />
 );

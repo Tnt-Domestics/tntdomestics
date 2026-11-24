@@ -1,5 +1,6 @@
 import { HardHat, Sparkles, Shield, Trash2, Droplets, Eye, Wrench, Wind, Layers } from 'lucide-react';
 import ServicePage from '@/components/ServicePage';
+import { constructionFaqs } from '@/content/faqs';
 import hero from '@/assets/construction-hero.jpg';
 import img1 from '@/assets/construction-1.jpg';
 import img2 from '@/assets/construction-2.jpg';
@@ -85,6 +86,7 @@ const ConstructionPost = () => (
       { src: img4, alt: 'Freshly cleaned commercial retail buildout', label: 'Commercial Buildout Turnover' },
     ]}
     ctaHeadline="Cleaning the Path to Handover"
+    faqs={constructionFaqs}
     ctaBody="Send us your project schedule and scope—we'll return a proposal built around your handover date."
   />
 );
