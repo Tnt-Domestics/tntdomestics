@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      booking_requests: {
+        Row: {
+          city: string | null
+          created_at: string
+          crm_status: string
+          email: string
+          event_id: string
+          full_name: string
+          id: string
+          payload: Json
+          phone: string
+          preferred_date: string | null
+          service: string
+          zip: string | null
+        }
+        Insert: {
+          city?: string | null
+          created_at?: string
+          crm_status?: string
+          email: string
+          event_id: string
+          full_name: string
+          id?: string
+          payload: Json
+          phone: string
+          preferred_date?: string | null
+          service: string
+          zip?: string | null
+        }
+        Update: {
+          city?: string | null
+          created_at?: string
+          crm_status?: string
+          email?: string
+          event_id?: string
+          full_name?: string
+          id?: string
+          payload?: Json
+          phone?: string
+          preferred_date?: string | null
+          service?: string
+          zip?: string | null
+        }
+        Relationships: []
+      }
       quote_requests: {
         Row: {
           created_at: string

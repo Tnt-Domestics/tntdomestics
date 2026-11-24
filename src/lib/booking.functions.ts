@@ -36,24 +36,35 @@ export type BookingPayload = z.infer<typeof payloadSchema>;
 export const submitBooking = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => payloadSchema.parse(d))
   .handler(async ({ data }) => {
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    // 1. Backup copy first, so a CRM outage never loses a lead.
+    const { data: row, error: dbError } = await supabaseAdmin
+      .from("booking_requests")
+      .insert({
+        event_id: data.event_id, service: data.service, full_name: data.full_name, email: data.email,
+        phone: data.phone, preferred_date: data.preferred_date, city: data.city, zip: data.zip, payload: data,
+      })
+      .select("id")
+      .single();
+    if (dbError) console.error("Booking backup insert failed", dbError.message);
+
+    // 2. Forward to the CRM catch hook.
+    let crm: "sent" | "failed" | "not_configured" = "not_configured";
     const url = process.env["CRM_WEBHOOK_URL"] || process.env["VITE_CRM_WEBHOOK_URL"];
-    if (!url) {
-      console.error("Booking not forwarded: CRM_WEBHOOK_URL is not set");
-      return { ok: false as const, reason: "not_configured" };
-    }
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) {
-        console.error("CRM webhook failed", res.status);
-        return { ok: false as const, reason: "webhook_failed" };
+    if (url) {
+      try {
+        const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+        crm = res.ok ? "sent" : "failed";
+        if (!res.ok) console.error("CRM webhook failed", res.status);
+      } catch (e) {
+        crm = "failed";
+        console.error("CRM webhook error", e);
       }
-    } catch (e) {
-      console.error("CRM webhook error", e);
-      return { ok: false as const, reason: "webhook_failed" };
+    } else {
+      console.error("Booking not forwarded: CRM_WEBHOOK_URL is not set");
     }
+    if (row) await supabaseAdmin.from("booking_requests").update({ crm_status: crm }).eq("id", row.id);
+
+    if (!row && crm !== "sent") return { ok: false as const, reason: "not_saved" };
     return { ok: true as const };
   });
