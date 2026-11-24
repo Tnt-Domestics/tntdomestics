@@ -10,3 +10,5 @@
 
 - [x] Update consultation messages and FAQs; remove visit and free/no-obligation wording sitewide
 - [x] Verify updated pages and consultation thank-you state without altering submission logic
+
+- [x] Fix homepage quote button blocked by decorative layer on mobile; verify related service-page layers
