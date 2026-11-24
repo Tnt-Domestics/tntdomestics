@@ -31,7 +31,7 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
-            Luxury Home & Estate Cleaning Services
+            Luxury House Cleaning & Estate Housekeeping in San Antonio and Austin
           </h1>
 
           {/* Subheadline */}
