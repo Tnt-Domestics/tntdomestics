@@ -23,10 +23,12 @@ type Props = {
   faqs: Faq[];
   ctaHeadline?: string;
   ctaBody?: string;
+  ctaLabel?: string;
 };
 
 const ContentPage = ({
   service, eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items = [], children, faqs,
+  ctaLabel = 'Request a Quote',
   ctaHeadline = 'Request Your Free Quote',
   ctaBody = 'Tell us about your property and we respond within 24 business hours.',
 }: Props) => (
@@ -48,7 +50,7 @@ const ContentPage = ({
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group shadow-teal" asChild>
                 <Link to="/book/" search={service ? { service } : {}}>
-                  Request a Quote <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  {ctaLabel} <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
@@ -93,7 +95,7 @@ const ContentPage = ({
           <p className="text-xl text-primary-foreground/80 mb-8">{ctaBody}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <Link to="/book/" search={service ? { service } : {}}>Request a Quote</Link>
+              <Link to="/book/" search={service ? { service } : {}}>{ctaLabel}</Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
               <Link to="/contact/">Contact Us</Link>

@@ -31,6 +31,7 @@ export const Route = createFileRoute("/service-areas/hawaii")({
 function Page() {
   return (
     <ContentPage
+      ctaLabel="Schedule a Consultation"
       eyebrow="Hawaii"
       heroImage={hero}
       heroImageAlt="Organized wardrobe in a Hawaii vacation estate"

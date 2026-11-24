@@ -31,6 +31,7 @@ export const Route = createFileRoute("/service-areas/austin")({
 function Page() {
   return (
     <ContentPage
+      ctaLabel="Schedule a Consultation"
       eyebrow="Austin, Texas"
       heroImage={hero}
       heroImageAlt="Modern luxury kitchen in an Austin home"

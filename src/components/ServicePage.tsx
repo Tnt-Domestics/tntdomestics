@@ -47,6 +47,7 @@ type Props = {
   gallery: GalleryItem[];
   ctaHeadline: string;
   ctaBody: string;
+  ctaLabel?: string;
   faqs?: Faq[];
 };
 
@@ -77,6 +78,7 @@ const ServicePage = ({
   gallery,
   ctaHeadline,
   ctaBody,
+  ctaLabel = 'Request a Quote',
   faqs,
 }: Props) => {
   return (
@@ -110,7 +112,7 @@ const ServicePage = ({
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
                 <Button size="lg" className="group shadow-teal" asChild>
                   <Link to="/book/" search={service ? { service } : {}}>
-                    Request a Quote
+                    {ctaLabel}
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
@@ -243,7 +245,7 @@ const ServicePage = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="group" asChild>
                 <Link to="/book/" search={service ? { service } : {}}>
-                  Request a Quote
+                  {ctaLabel}
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

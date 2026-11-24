@@ -9,6 +9,7 @@ import img4 from '@/assets/residential-4.jpg';
 
 const Residential = () => (
   <ServicePage
+      ctaLabel="Schedule a Consultation"
       service="residential"
     eyebrow="Luxury Residential Division"
     badgeIcon={Home}

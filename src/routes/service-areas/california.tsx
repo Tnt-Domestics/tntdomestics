@@ -31,6 +31,7 @@ export const Route = createFileRoute("/service-areas/california")({
 function Page() {
   return (
     <ContentPage
+      ctaLabel="Schedule a Consultation"
       eyebrow="California"
       heroImage={hero}
       heroImageAlt="Spa-like primary bathroom in a California estate"

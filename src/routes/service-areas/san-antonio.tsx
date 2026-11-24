@@ -31,6 +31,7 @@ export const Route = createFileRoute("/service-areas/san-antonio")({
 function Page() {
   return (
     <ContentPage
+      ctaLabel="Schedule a Consultation"
       eyebrow="San Antonio, Texas"
       heroImage={hero}
       heroImageAlt="Formal living room in a San Antonio estate"

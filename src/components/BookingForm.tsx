@@ -56,7 +56,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
   const send = useServerFn(submitBooking);
   const [v, setV] = useState<Values>({
     service: isService(initialService) ? initialService : '', property_type: '', approx_size: '', frequency: '', preferred_date: '', time_window: '',
-    full_name: '', company: '', phone: '', email: '', address: '', city: 'San Antonio', zip: '', notes: '', sms_consent: false, website: '',
+    full_name: '', company: '', phone: '', email: '', address: '', city: '', zip: '', notes: '', sms_consent: false, website: '',
   });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');

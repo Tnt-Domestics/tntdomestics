@@ -10,7 +10,7 @@ import { bookFaqs } from "@/content/faqs";
 export const Route = createFileRoute("/book")({
   validateSearch: (search: Record<string, unknown>): { service?: string } =>
     typeof search["service"] === "string" ? { service: search["service"] } : {},
-  head: () => pageHead("/book/", "Book a Cleaning in San Antonio | TNT Domestics", "Book commercial, residential, post-construction, move-out or aircraft cleaning with TNT Domestics in San Antonio, TX. Pick a date and get a confirmed quote fast."),
+  head: () => pageHead("/book/", "Request a Cleaning Quote | TNT Domestics | TX, CA & HI", "Request a quote for residential, estate, commercial, government, post-construction, move-out or aircraft cleaning with TNT Domestics across Texas, California and Hawaii."),
   component: Page,
 });
 
@@ -29,8 +29,8 @@ function Page() {
         <section className="pt-36 pb-12 bg-gradient-to-br from-teal-700 to-primary text-primary-foreground">
           <div className="container-wide mx-auto px-6">
             <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 text-sm font-medium">Book a Cleaning</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Book a Cleaning in San Antonio</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Book commercial, residential, post-construction, move-out or aircraft cleaning with TNT Domestics in San Antonio, TX. Send your preferred date and a coordinator confirms your time window and written quote.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Request a Cleaning Quote</h1>
+            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Book commercial, residential, post-construction, move-out or aircraft cleaning with TNT Domestics in San Antonio, Austin and across Texas, California and Hawaii. Send your preferred date and a coordinator confirms your time window and written quote.</p>
           </div>
         </section>
         <section className="section-padding">
