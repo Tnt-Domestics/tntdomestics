@@ -1,4 +1,9 @@
 # Roadmap
+- [x] Install route-derived sitemap with page-specific lastmod and update robots.txt
+- [x] Add per-page server-rendered business, page, breadcrumb, service and matching FAQ schema; add llms.txt
+- [x] Update homepage H1 and noindex 404 title; verify pages
+- [ ] Run SEO review
+- [ ] Check security and request publishing
 - [x] Per-page SEO: titles, descriptions, canonicals with trailing slashes, new pages, FAQs, crawlable links, remove unverified aviation reviews
 - [x] Email Us links use management@tntdomestics.com
 - [x] Send a quote confirmation to the customer and a new-quote alert to management

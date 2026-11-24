@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
-import { pageHead, faqJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import hero from "@/assets/residential-hero.jpg";
 
 const faqs = [
@@ -15,9 +15,9 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/service-areas/")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   head: () => ({
-    ...pageHead("/service-areas/", "Luxury Home Cleaning Locations: San Antonio, Austin, CA & HI", "TNT Domestics provides estate housekeeping in Alamo Heights, Olmos Park, The Dominion, West Lake Hills, Tarrytown, Atherton, Beverly Hills, Kahala, Wailea and more."),
-    scripts: [faqJsonLd(faqs)],
+    ...pageHead("/service-areas/", "Luxury Home Cleaning Locations: San Antonio, Austin, CA & HI", "TNT Domestics provides estate housekeeping in Alamo Heights, Olmos Park, The Dominion, West Lake Hills, Tarrytown, Atherton, Beverly Hills, Kahala, Wailea and more.", { faqs }),
   }),
   component: Page,
 });

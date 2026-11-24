@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
 import StandardsList from "@/components/StandardsList";
-import { pageHead, faqJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import hero from "@/assets/residential-2.jpg";
 
 const faqs = [
@@ -21,9 +21,9 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/service-areas/california")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   head: () => ({
-    ...pageHead("/service-areas/california/", "Estate Housekeeping Atherton, Beverly Hills, Newport & La Jolla", "Contracted luxury estate cleaning in Atherton, Hillsborough, Woodside, Beverly Hills, Bel Air, Malibu, Newport Beach, Rancho Santa Fe and La Jolla, California."),
-    scripts: [faqJsonLd(faqs)],
+    ...pageHead("/service-areas/california/", "Estate Housekeeping Atherton, Beverly Hills, Newport & La Jolla", "Contracted luxury estate cleaning in Atherton, Hillsborough, Woodside, Beverly Hills, Bel Air, Malibu, Newport Beach, Rancho Santa Fe and La Jolla, California.", { faqs }),
   }),
   component: Page,
 });

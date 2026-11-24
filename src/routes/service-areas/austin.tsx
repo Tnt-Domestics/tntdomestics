@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
 import StandardsList from "@/components/StandardsList";
-import { pageHead, faqJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import hero from "@/assets/residential-1.jpg";
 
 const faqs = [
@@ -21,9 +21,9 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/service-areas/austin")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   head: () => ({
-    ...pageHead("/service-areas/austin/", "Luxury House Cleaning West Lake Hills, Tarrytown & Barton Creek", "Estate housekeeping in West Lake Hills, Rollingwood, Tarrytown, Old Enfield, Pemberton Heights, Barton Creek, Lakeway and Spanish Oaks, Austin TX."),
-    scripts: [faqJsonLd(faqs)],
+    ...pageHead("/service-areas/austin/", "Luxury House Cleaning West Lake Hills, Tarrytown & Barton Creek", "Estate housekeeping in West Lake Hills, Rollingwood, Tarrytown, Old Enfield, Pemberton Heights, Barton Creek, Lakeway and Spanish Oaks, Austin TX.", { faqs }),
   }),
   component: Page,
 });

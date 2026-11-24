@@ -2,10 +2,10 @@ import type { Faq } from '@/components/FaqSection';
 import { Link } from '@tanstack/react-router';
 import { EMAIL, PHONE } from '@/lib/seo';
 
-const Mail = () => (
+const Mail = (
   <a href={`mailto:${EMAIL}`} className="text-primary underline underline-offset-2">email us</a>
 );
-const Tel = () => (
+const Tel = (
   <a href={`tel:${PHONE}`} className="text-primary underline underline-offset-2">{PHONE}</a>
 );
 
@@ -13,7 +13,7 @@ export const homeFaqs: Faq[] = [
   { q: 'What does TNT Domestics do?', a: 'TNT Domestics is a San Antonio, Texas cleaning company that provides commercial janitorial service, government facility cleaning, luxury residential housekeeping, post-construction cleaning, move-in/move-out cleaning and private aircraft cleaning.' },
   { q: 'Where does TNT Domestics provide cleaning services?', a: 'We are based in San Antonio and serve the greater San Antonio area, including New Braunfels, Boerne, Schertz and Seguin, plus Austin, Houston and Dallas. Programs are also available in California (Bay Area, Los Angeles, Orange County, San Diego, Sacramento) and across Hawaii.' },
   { q: 'Is TNT Domestics a certified minority- or woman-owned business?', a: 'Yes. TNT Domestics holds MBE, WBE, SBE, HUB and AABE certifications and is registered in SAM with UEI Z11EBUHZY3U5.' },
-  { q: 'How do I get a cleaning quote?', a: <>Call <Tel />, <Mail /> or submit the online quote request. We respond to all inquiries within 24 business hours.</> },
+  { q: 'How do I get a cleaning quote?', a: <>Call {Tel}, {Mail} or submit the online quote request. We respond to all inquiries within 24 business hours.</> },
   { q: 'What is the difference between recurring cleaning and deep cleaning?', a: 'Recurring cleaning maintains the agreed areas of your home or facility on a regular schedule. Deep cleaning is a more detailed service for accumulated dust, fixtures, millwork and finishes. We define the tasks in your written scope rather than assuming every property needs the same checklist.' },
   { q: 'Do you offer more than residential cleaning in California and Hawaii?', a: 'Yes. TNT Domestics offers its full range of residential, estate, commercial, government, post-construction and specialty cleaning services in California and Hawaii. Share your location and project requirements so we can confirm the scope and scheduling for your property.' },
   { q: 'What information should I include in a cleaning quote request?', a: <>Include your service type, property type, approximate size, address, preferred frequency, date and time window. Use the notes field for fine finishes, access requirements or project deadlines. <Link to="/book/" className="text-primary underline underline-offset-2">Request a cleaning quote</Link> with those details.</> },
@@ -33,7 +33,7 @@ export const governmentFaqs: Faq[] = [
   { q: 'Is TNT Domestics HUB certified?', a: 'Yes. TNT Domestics is a certified Historically Underutilized Business (HUB) in Texas, and also holds MBE, WBE, SBE and AABE certifications.' },
   { q: "What is TNT Domestics' UEI and NAICS code?", a: 'Our UEI is Z11EBUHZY3U5. Our primary NAICS code is 561720 (Janitorial Services), with 562119 (Other Waste Collection).' },
   { q: 'Can TNT Domestics subcontract on a government contract?', a: 'Yes. We team with prime contractors as a certified minority- and woman-owned subcontractor for janitorial and post-construction scopes.' },
-  { q: 'How do I request a capability statement?', a: <><Mail /> or call <Tel /> and we will send our capability statement and references.</> },
+  { q: 'How do I request a capability statement?', a: <>{Mail} or call {Tel} and we will send our capability statement and references.</> },
   { q: 'What should a government facility include when requesting a cleaning proposal?', a: 'Share the facility location, approximate square footage, required cleaning tasks, service frequency, access procedures and procurement requirements. Include the solicitation or scope of work when available so the proposal can address the actual contract requirements.' },
 ];
 
@@ -81,7 +81,7 @@ export const serviceAreaFaqs: Faq[] = [
 ];
 
 export const aboutFaqs: Faq[] = [
-  { q: 'Who runs TNT Domestics?', a: <>Projects are managed by Tara Sydnor, Project Manager, reachable at <Tel />.</> },
+  { q: 'Who runs TNT Domestics?', a: <>Projects are managed by Tara Sydnor, Project Manager, reachable at {Tel}.</> },
   { q: 'Is TNT Domestics minority- and woman-owned?', a: 'Yes. TNT Domestics is certified MBE (minority business enterprise), WBE (women\'s business enterprise), SBE, HUB and AABE.' },
 ];
 
@@ -90,5 +90,5 @@ export const bookFaqs: Faq[] = [
   { q: 'Do commercial and government clients get a proposal?', a: 'Yes. Commercial, government and aviation requests receive a written, scoped proposal covering services, frequency and pricing.' },
   { q: 'Does choosing a preferred date confirm my cleaning appointment?', a: 'No. The date and time window on the form are preferences, not a confirmed appointment. Management reviews your request and contacts you to confirm availability, the cleaning scope and price before service is scheduled.' },
   { q: 'Can I request one-time cleaning or an ongoing service program?', a: 'Yes. Use the frequency field to tell us whether you need a one-time service or recurring cleaning. The appropriate scope and schedule are reviewed with you before you approve the quote.' },
-  { q: 'How can I discuss special cleaning requirements before service?', a: <>Add your requirements in the quote form notes, including delicate surfaces, household preferences, facility access or handover deadlines. You can also call <Tel /> or <Mail /> to discuss the scope with management.</> },
+  { q: 'How can I discuss special cleaning requirements before service?', a: <>Add your requirements in the quote form notes, including delicate surfaces, household preferences, facility access or handover deadlines. You can also call {Tel} or {Mail} to discuss the scope with management.</> },
 ];

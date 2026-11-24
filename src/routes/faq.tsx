@@ -6,7 +6,8 @@ import { pageHead } from "@/lib/seo";
 import * as F from "@/content/faqs";
 
 export const Route = createFileRoute("/faq")({
-  head: () => pageHead("/faq/", "Luxury & Commercial Cleaning FAQs | TNT Domestics", "Answers about estate care, house cleaning costs, janitorial services, government, construction and aircraft cleaning in Texas, California and Hawaii."),
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
+  head: () => pageHead("/faq/", "Luxury & Commercial Cleaning FAQs | TNT Domestics", "Answers about estate care, house cleaning costs, janitorial services, government, construction and aircraft cleaning in Texas, California and Hawaii.", { faqs: groups.flatMap(group => group.faqs) }),
   component: Page,
 });
 

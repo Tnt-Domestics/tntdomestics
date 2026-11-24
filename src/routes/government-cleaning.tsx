@@ -5,7 +5,8 @@ import { governmentFaqs } from "@/content/faqs";
 import hero from "@/assets/commercial-2.jpg";
 
 export const Route = createFileRoute("/government-cleaning")({
-  head: () => pageHead("/government-cleaning/", "Government Facility Cleaning Contractor Texas | HUB, MBE, WBE", "HUB, MBE & WBE certified janitorial contractor for government facilities in Texas. SAM registered, UEI Z11EBUHZY3U5, NAICS 561720 & 562119."),
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
+  head: () => pageHead("/government-cleaning/", "Government Facility Cleaning Contractor Texas | HUB, MBE, WBE", "HUB, MBE & WBE certified janitorial contractor for government facilities in Texas. SAM registered, UEI Z11EBUHZY3U5, NAICS 561720 & 562119.", { faqs: governmentFaqs, service: "Government Facility Cleaning" }),
   component: Page,
 });
 

@@ -5,7 +5,8 @@ import { moveFaqs } from "@/content/faqs";
 import hero from "@/assets/residential-1.jpg";
 
 export const Route = createFileRoute("/move-in-move-out")({
-  head: () => pageHead("/move-in-move-out/", "Move-In & Move-Out Cleaning San Antonio | TNT Domestics", "Move-in and move-out cleaning in San Antonio, TX for homeowners, renters, landlords and property managers. Deep, inspection-ready cleaning. Request a quote."),
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
+  head: () => pageHead("/move-in-move-out/", "Move-In & Move-Out Cleaning San Antonio | TNT Domestics", "Move-in and move-out cleaning in San Antonio, TX for homeowners, renters, landlords and property managers. Deep, inspection-ready cleaning. Request a quote.", { faqs: moveFaqs, service: "Move-In & Move-Out Cleaning" }),
   component: Page,
 });
 

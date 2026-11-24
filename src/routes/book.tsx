@@ -8,9 +8,10 @@ import { pageHead } from "@/lib/seo";
 import { bookFaqs } from "@/content/faqs";
 
 export const Route = createFileRoute("/book")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   validateSearch: (search: Record<string, unknown>): { service?: string } =>
     typeof search["service"] === "string" ? { service: search["service"] } : {},
-  head: () => pageHead("/book/", "Schedule a Private Consultation | TNT Domestics", "Schedule a private consultation for luxury home cleaning in San Antonio, Austin, California and Hawaii, or request a quote for commercial, government or aircraft cleaning."),
+  head: () => pageHead("/book/", "Schedule a Private Consultation | TNT Domestics", "Schedule a private consultation for luxury home cleaning in San Antonio, Austin, California and Hawaii, or request a quote for commercial, government or aircraft cleaning.", { faqs: bookFaqs }),
   component: Page,
 });
 

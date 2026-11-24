@@ -5,7 +5,8 @@ import { aboutFaqs } from "@/content/faqs";
 import hero from "@/assets/hero-bg.jpg";
 
 export const Route = createFileRoute("/about")({
-  head: () => pageHead("/about/", "About TNT Domestics | Certified Cleaning Company San Antonio", "TNT Domestics is a minority- and woman-owned, HUB certified cleaning company in San Antonio, TX, led by Project Manager Tara Sydnor."),
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
+  head: () => pageHead("/about/", "About TNT Domestics | Certified Cleaning Company San Antonio", "TNT Domestics is a minority- and woman-owned, HUB certified cleaning company in San Antonio, TX, led by Project Manager Tara Sydnor.", { faqs: aboutFaqs }),
   component: Page,
 });
 

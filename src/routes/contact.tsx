@@ -7,7 +7,8 @@ import { pageHead } from "@/lib/seo";
 import { homeFaqs } from "@/content/faqs";
 
 export const Route = createFileRoute("/contact")({
-  head: () => pageHead("/contact/", "Contact TNT Domestics | Cleaning Quote | 830-500-5791", "Request a cleaning quote from TNT Domestics in San Antonio, TX. Call 830-500-5791 or email. We respond within 24 business hours."),
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
+  head: () => pageHead("/contact/", "Contact TNT Domestics | Cleaning Quote | 830-500-5791", "Request a cleaning quote from TNT Domestics in San Antonio, TX. Call 830-500-5791 or email. We respond within 24 business hours.", { faqs: homeFaqs.slice(1) }),
   component: Page,
 });
 

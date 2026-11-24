@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
 import StandardsList from "@/components/StandardsList";
-import { pageHead, faqJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import hero from "@/assets/residential-4.jpg";
 
 const faqs = [
@@ -21,9 +21,9 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/service-areas/san-antonio")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   head: () => ({
-    ...pageHead("/service-areas/san-antonio/", "Luxury House Cleaning Alamo Heights, Olmos Park & The Dominion", "Estate housekeeping in Alamo Heights, Olmos Park, Terrell Hills, Monte Vista, The Dominion, Shavano Park and Cordillera Ranch. Background-checked, NDA-bound crews."),
-    scripts: [faqJsonLd(faqs)],
+    ...pageHead("/service-areas/san-antonio/", "Luxury House Cleaning Alamo Heights, Olmos Park & The Dominion", "Estate housekeeping in Alamo Heights, Olmos Park, Terrell Hills, Monte Vista, The Dominion, Shavano Park and Cordillera Ranch. Background-checked, NDA-bound crews.", { faqs }),
   }),
   component: Page,
 });

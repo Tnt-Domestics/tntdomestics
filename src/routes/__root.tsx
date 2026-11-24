@@ -17,18 +17,20 @@ import { reportLovableError } from "@/lib/lovable-error-reporting";
 import NotFound from "@/pages/NotFound";
 import appCss from "../styles.css?url";
 
-const SITE_TITLE = "TNT Domestics | Professional Cleaning Services - Texas, California & Hawaii";
+const SITE_TITLE = "Page Not Found | TNT Domestics";
 const SITE_DESCRIPTION =
   "TNT Domestics delivers professional cleaning solutions for government facilities, commercial environments, and luxury residences across Texas, California, and Hawaii. MBE/WBE/HUB Certified.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  staticData: { sitemap: false },
+  head: ({ matches }) => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE_TITLE },
       { name: "description", content: SITE_DESCRIPTION },
       { name: "author", content: "TNT Domestics" },
+      ...(matches.every(match => match.routeId === "__root__") ? [{ name: "robots", content: "noindex" }] : []),
       { property: "og:type", content: "website" },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },

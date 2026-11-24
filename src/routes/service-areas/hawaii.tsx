@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
 import StandardsList from "@/components/StandardsList";
-import { pageHead, faqJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import hero from "@/assets/residential-3.jpg";
 
 const faqs = [
@@ -21,9 +21,9 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/service-areas/hawaii")({
+  staticData: { sitemap: true, sitemapLastmod: "2026-11-24" },
   head: () => ({
-    ...pageHead("/service-areas/hawaii/", "Luxury Home & Vacation Estate Cleaning Hawaii | Kahala, Wailea", "Contracted luxury home and vacation-estate cleaning in Kahala, Diamond Head, Lanikai, Wailea, Kapalua, the Kohala Coast and Princeville, Hawaii."),
-    scripts: [faqJsonLd(faqs)],
+    ...pageHead("/service-areas/hawaii/", "Luxury Home & Vacation Estate Cleaning Hawaii | Kahala, Wailea", "Contracted luxury home and vacation-estate cleaning in Kahala, Diamond Head, Lanikai, Wailea, Kapalua, the Kohala Coast and Princeville, Hawaii.", { faqs }),
   }),
   component: Page,
 });
