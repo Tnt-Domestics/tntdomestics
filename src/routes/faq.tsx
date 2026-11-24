@@ -6,7 +6,7 @@ import { pageHead } from "@/lib/seo";
 import * as F from "@/content/faqs";
 
 export const Route = createFileRoute("/faq")({
-  head: () => pageHead("/faq/", "Cleaning Service FAQ | TNT Domestics San Antonio", "Answers about TNT Domestics' cleaning services, pricing, service areas, certifications, scheduling, insurance and payment options."),
+  head: () => pageHead("/faq/", "Luxury & Commercial Cleaning FAQs | TNT Domestics", "Answers about estate care, house cleaning costs, janitorial services, government, construction and aircraft cleaning in Texas, California and Hawaii."),
   component: Page,
 });
 
@@ -30,7 +30,7 @@ function Page() {
         <div className="container-narrow mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h1>
           <p className="text-lg text-muted-foreground">
-            Quick answers about TNT Domestics' commercial, government, residential, post-construction and aviation cleaning services in San Antonio, Texas and beyond.
+            Answers about luxury house cleaning, estate care, commercial janitorial services, government facilities, post-construction cleanup and aviation cleaning in San Antonio, Austin, California and Hawaii.
           </p>
         </div>
         {groups.map((g, i) => (

@@ -20,8 +20,6 @@ import appCss from "../styles.css?url";
 const SITE_TITLE = "TNT Domestics | Professional Cleaning Services - Texas, California & Hawaii";
 const SITE_DESCRIPTION =
   "TNT Domestics delivers professional cleaning solutions for government facilities, commercial environments, and luxury residences across Texas, California, and Hawaii. MBE/WBE/HUB Certified.";
-const SOCIAL_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/adyVOw87h7dJofGVOZSlwtrswfF3/social-images/social-1784696072387-Screenshot_2026-07-21_at_11.52.00_PM.webp";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -34,12 +32,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:title", content: SITE_TITLE },
       { property: "og:description", content: SITE_DESCRIPTION },
-      { property: "og:image", content: SOCIAL_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@TNTDomestics" },
       { name: "twitter:title", content: SITE_TITLE },
       { name: "twitter:description", content: SITE_DESCRIPTION },
-      { name: "twitter:image", content: SOCIAL_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
