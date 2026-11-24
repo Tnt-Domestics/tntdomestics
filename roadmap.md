@@ -4,7 +4,7 @@
 - [x] Update homepage H1 and noindex 404 title; verify pages
 - [x] Run SEO review (review inspected the earlier published commit; current sitemap directly verified)
 - [x] Check security
-- [ ] Request publishing
+- [x] Request publishing (scheduled for https://tntdomestics.com; deployment completion not yet verified)
 - [x] Per-page SEO: titles, descriptions, canonicals with trailing slashes, new pages, FAQs, crawlable links, remove unverified aviation reviews
 - [x] Email Us links use management@tntdomestics.com
 - [x] Send a quote confirmation to the customer and a new-quote alert to management
