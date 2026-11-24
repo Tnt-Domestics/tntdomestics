@@ -12,6 +12,7 @@ import { QueryClientProvider, type QueryClient } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { captureAttribution } from "@/lib/booking";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import NotFound from "@/pages/NotFound";
 import appCss from "../styles.css?url";
@@ -80,6 +81,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => { captureAttribution(); }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

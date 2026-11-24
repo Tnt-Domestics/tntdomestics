@@ -84,9 +84,9 @@ const Header = () => {
               </Link>
             ))}
             <Button variant="default" size="sm" className="ml-4" asChild>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
+              <Link to="/book/">
                 Request a Quote
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -118,9 +118,9 @@ const Header = () => {
                 <a href="mailto:management@tntdomestics.com" className="text-sm text-muted-foreground py-1">✉️ Email Us</a>
               </div>
               <Button variant="default" className="mt-3" asChild>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/book/" onClick={() => setIsMobileMenuOpen(false)}>
                   Request a Quote
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

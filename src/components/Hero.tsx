@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import { ArrowRight, Shield, Star, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroBg from '@/assets/hero-bg.jpg';
@@ -70,15 +71,15 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
             <Button size="lg" className="group shadow-teal" asChild>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
+              <Link to="/book/">
                 Request a Quote
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
+              <Link to="/book/">
                 Schedule a Private Consultation
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

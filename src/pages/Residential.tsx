@@ -9,6 +9,7 @@ import img4 from '@/assets/residential-4.jpg';
 
 const Residential = () => (
   <ServicePage
+      service="residential"
     eyebrow="Luxury Residential Division"
     badgeIcon={Home}
     heroImage={hero}

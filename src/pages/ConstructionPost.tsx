@@ -9,6 +9,7 @@ import img4 from '@/assets/construction-4.jpg';
 
 const ConstructionPost = () => (
   <ServicePage
+      service="post-construction"
     eyebrow="Post-Construction Division"
     badgeIcon={HardHat}
     heroImage={hero}

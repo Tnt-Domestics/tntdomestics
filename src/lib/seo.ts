@@ -1,8 +1,6 @@
 export const SITE_URL = "https://tntdomestics.com";
 export const SITE_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/adyVOw87h7dJofGVOZSlwtrswfF3/social-images/social-1784696072387-Screenshot_2026-07-21_at_11.52.00_PM.webp";
-export const QUOTE_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform";
 export const EMAIL = "management@tntdomestics.com";
 export const PHONE = "830-500-5791";
 

@@ -8,3 +8,4 @@
 - Router uses `trailingSlash: "always"`; canonical paths and `<Link to>` values end in "/". Why: canonicals must match the URL that is actually served (slashless paths redirect).
 - FAQ copy lives in `src/content/faqs.tsx` (service-area pages keep theirs inline) and renders through `FaqSection`; FAQPage JSON-LD only on /service-areas/ pages via `faqJsonLd()`. Why: owner supplied exact FAQ text with schema for those pages only.
 - Service-area market pages are written individually, never one template with the city swapped. Why: avoids doorway-page penalties.
+- Booking: all quote CTAs link to `/book/` (`?service=` from service pages); the form posts via the `submitBooking` server fn, which forwards JSON to the `VITE_CRM_WEBHOOK_URL` secret server-side. Why: keeps the hook URL out of the browser and avoids CORS with Zapier/Make/GoHighLevel.

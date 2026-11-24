@@ -12,6 +12,7 @@ export const Route = createFileRoute("/move-in-move-out")({
 function Page() {
   return (
     <ContentPage
+      service="move"
       eyebrow="Move-In / Move-Out"
       heroImage={hero}
       heroImageAlt="Spotless empty kitchen ready for move-in"

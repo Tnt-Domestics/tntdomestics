@@ -12,6 +12,7 @@ export const Route = createFileRoute("/government-cleaning")({
 function Page() {
   return (
     <ContentPage
+      service="government"
       eyebrow="Government Contracting"
       heroImage={hero}
       heroImageAlt="Uniformed cleaner in a public building lobby"

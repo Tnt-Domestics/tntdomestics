@@ -12,7 +12,6 @@ import jetAfter2 from '@/assets/jet-after-2.jpg';
 import jetGalley from '@/assets/jet-galley.jpg';
 import jetExteriorFull from '@/assets/jet-exterior-full.jpg';
 
-const QUOTE_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform';
 
 const PrivateJet = () => {
   const services = [
@@ -93,10 +92,10 @@ const PrivateJet = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
                 <Button size="lg" className="group shadow-teal" asChild>
-                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to="/book/" search={{ service: "aviation" }}>
                     Request a Quote
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
@@ -104,9 +103,9 @@ const PrivateJet = () => {
                   className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                   asChild
                 >
-                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to="/book/" search={{ service: "aviation" }}>
                     Schedule a Private Consultation
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -296,10 +295,10 @@ const PrivateJet = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="group" asChild>
-                <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/book/" search={{ service: "aviation" }}>
                   Request a Quote
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button
                 size="lg"

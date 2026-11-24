@@ -6,8 +6,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqSection, { type Faq } from '@/components/FaqSection';
 
-const QUOTE_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform';
 
 export type ServiceItem = {
   icon: LucideIcon;
@@ -22,6 +20,8 @@ export type GalleryItem = {
 };
 
 type Props = {
+  /** Booking form service value pre-selected by the quote buttons. */
+  service?: string | undefined;
   eyebrow: string;
   badgeIcon: LucideIcon;
   heroImage: string;
@@ -51,6 +51,7 @@ type Props = {
 };
 
 const ServicePage = ({
+  service,
   eyebrow,
   badgeIcon: BadgeIcon,
   heroImage,
@@ -108,10 +109,10 @@ const ServicePage = ({
 
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
                 <Button size="lg" className="group shadow-teal" asChild>
-                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to="/book/" search={service ? { service } : {}}>
                     Request a Quote
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button
                   size="lg"
@@ -119,9 +120,9 @@ const ServicePage = ({
                   className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                   asChild
                 >
-                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                  <Link to="/book/" search={service ? { service } : {}}>
                     Schedule a Private Consultation
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -251,10 +252,10 @@ const ServicePage = ({
             <p className="text-xl text-primary-foreground/80 mb-8">{ctaBody}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="group" asChild>
-                <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/book/" search={service ? { service } : {}}>
                   Request a Quote
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button
                 size="lg"

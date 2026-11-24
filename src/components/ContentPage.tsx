@@ -5,11 +5,12 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FaqSection, { type Faq } from '@/components/FaqSection';
-import { QUOTE_URL } from '@/lib/seo';
 
 export type ListItem = { title: string; description?: string };
 
 type Props = {
+  /** Booking form service value pre-selected by the quote buttons. */
+  service?: string | undefined;
   eyebrow: string;
   heroImage: string;
   heroImageAlt: string;
@@ -25,7 +26,7 @@ type Props = {
 };
 
 const ContentPage = ({
-  eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items = [], children, faqs,
+  service, eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items = [], children, faqs,
   ctaHeadline = 'Request Your Free Quote',
   ctaBody = 'Tell us about your property and we respond within 24 business hours.',
 }: Props) => (
@@ -46,9 +47,9 @@ const ContentPage = ({
             <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 max-w-2xl">{answer}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group shadow-teal" asChild>
-                <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/book/" search={service ? { service } : {}}>
                   Request a Quote <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
                 <a href="tel:830-500-5791">Call 830-500-5791</a>
@@ -92,7 +93,7 @@ const ContentPage = ({
           <p className="text-xl text-primary-foreground/80 mb-8">{ctaBody}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">Request a Quote</a>
+              <Link to="/book/" search={service ? { service } : {}}>Request a Quote</Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
               <Link to="/contact/">Contact Us</Link>

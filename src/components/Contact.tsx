@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import { Mail, Phone, ArrowRight, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
@@ -79,15 +80,15 @@ const Contact = () => {
 
             <div className="space-y-4">
               <Button size="lg" className="w-full group shadow-teal" asChild>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
+                <Link to="/book/">
                   Request a Quote
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="w-full" asChild>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSemUJYe9Q7JpF1QUXErmiZZlWcX05tLbqDhauOG6T1iGSfqBA/viewform" target="_blank" rel="noopener noreferrer">
+                <Link to="/book/">
                   Schedule a Private Consultation
-                </a>
+                </Link>
               </Button>
             </div>
 
