@@ -15,11 +15,11 @@ const Row = ({ label, value }: { label: string; value?: string | undefined }) =>
 const NewBooking = (p: Props) => (
   <Html lang="en" dir="ltr">
     <Head />
-    <Preview>New booking request: {p.service_label ?? 'Cleaning'} from {p.full_name ?? 'a client'}</Preview>
+    <Preview>New quote request: {p.service_label ?? 'Cleaning'} from {p.full_name ?? 'a client'}</Preview>
     <Body style={main}>
       <Container style={container}>
         <Text style={brand}>TNT Domestics</Text>
-        <Heading style={h1}>New booking request</Heading>
+        <Heading style={h1}>New quote request</Heading>
         <Text style={lead}>{p.service_label ?? 'Cleaning'} · {p.preferred_date ?? 'date TBD'} · {p.time_window ?? ''}</Text>
         <Hr style={hr} />
         <Section>
@@ -43,8 +43,8 @@ const NewBooking = (p: Props) => (
 
 export const template = {
   component: NewBooking,
-  subject: (d: Record<string, any>) => `New booking: ${d['service_label'] ?? 'Cleaning'} – ${d['full_name'] ?? 'client'}`,
-  displayName: 'New booking (to management)',
+  subject: (d: Record<string, any>) => `New quote request: ${d['service_label'] ?? 'Cleaning'} – ${d['full_name'] ?? 'client'}`,
+  displayName: 'New quote request (to management)',
   to: 'management@tntdomestics.com',
   previewData: {
     service_label: 'Luxury Residential Cleaning', full_name: 'Jane Doe', phone: '210-555-0100', email: 'jane@example.com',

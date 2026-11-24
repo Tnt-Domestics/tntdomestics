@@ -31,6 +31,32 @@ const payloadSchema = z.object({
 });
 
 export type BookingPayload = z.infer<typeof payloadSchema>;
+type CrmStatus = "sent" | "failed" | "not_configured";
+
+async function attemptEmail(label: string, send: Promise<unknown>) {
+  try {
+    await send;
+  } catch (error) {
+    console.error(`${label} failed`, error);
+  }
+}
+
+/** Sends the customer receipt and management alert without blocking a saved request. */
+export async function sendBookingEmails(data: BookingPayload, crm: CrmStatus) {
+  const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+  await Promise.all([
+    attemptEmail("Management quote alert", sendTemplateEmail("new-booking", "management@tntdomestics.com", {
+      templateData: { ...data, crm_status: crm },
+      idempotencyKey: `new-booking-${data.event_id}`,
+      replyTo: data.email,
+    })),
+    attemptEmail("Customer quote confirmation", sendTemplateEmail("quote-confirmation", data.email, {
+      templateData: data,
+      idempotencyKey: `quote-confirmation-${data.event_id}`,
+      replyTo: "management@tntdomestics.com",
+    })),
+  ]);
+}
 
 /** Forwards a booking request to the CRM catch hook (Zapier / Make / GoHighLevel). */
 export const submitBooking = createServerFn({ method: "POST" })
@@ -49,7 +75,7 @@ export const submitBooking = createServerFn({ method: "POST" })
     if (dbError) console.error("Booking backup insert failed", dbError.message);
 
     // 2. Forward to the CRM catch hook.
-    let crm: "sent" | "failed" | "not_configured" = "not_configured";
+    let crm: CrmStatus = "not_configured";
     const url = process.env["CRM_WEBHOOK_URL"] || process.env["VITE_CRM_WEBHOOK_URL"];
     if (url) {
       try {
@@ -65,15 +91,11 @@ export const submitBooking = createServerFn({ method: "POST" })
     }
     if (row) await supabaseAdmin.from("booking_requests").update({ crm_status: crm }).eq("id", row.id);
 
-    // 3. Notify management by email.
+    // 3. Confirm receipt to the customer and alert management.
     try {
-      const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
-      await sendTemplateEmail("new-booking", "management@tntdomestics.com", {
-        templateData: { ...data, crm_status: crm },
-        idempotencyKey: `new-booking-${data.event_id}`,
-      });
+      await sendBookingEmails(data, crm);
     } catch (e) {
-      console.error("Booking notification email failed", e);
+      console.error("Quote email setup failed", e);
     }
 
     if (!row && crm !== "sent") return { ok: false as const, reason: "not_saved" };
