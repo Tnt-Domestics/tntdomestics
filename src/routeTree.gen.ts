@@ -21,6 +21,7 @@ import { Route as MoveInMoveOutRouteImport } from './routes/move-in-move-out'
 import { Route as PostConstructionRouteImport } from './routes/post-construction'
 import { Route as PrivateJetCleaningRouteImport } from './routes/private-jet-cleaning'
 import { Route as ResidentialRouteImport } from './routes/residential'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServiceAreasIndexRouteImport } from './routes/service-areas/index'
 import { Route as ServiceAreasAustinRouteImport } from './routes/service-areas/austin'
 import { Route as ServiceAreasCaliforniaRouteImport } from './routes/service-areas/california'
@@ -88,6 +89,11 @@ const ResidentialRoute = ResidentialRouteImport.update({
   path: '/residential',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServiceAreasIndexRoute = ServiceAreasIndexRouteImport.update({
   id: '/service-areas/',
   path: '/service-areas/',
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service-areas/austin': typeof ServiceAreasAustinRoute
   '/service-areas/california': typeof ServiceAreasCaliforniaRoute
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service-areas/austin': typeof ServiceAreasAustinRoute
   '/service-areas/california': typeof ServiceAreasCaliforniaRoute
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/post-construction': typeof PostConstructionRoute
   '/private-jet-cleaning': typeof PrivateJetCleaningRoute
   '/residential': typeof ResidentialRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/service-areas/austin': typeof ServiceAreasAustinRoute
   '/service-areas/california': typeof ServiceAreasCaliforniaRoute
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/sitemap.xml'
     | '/service-areas/austin'
     | '/service-areas/california'
     | '/service-areas/hawaii'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/sitemap.xml'
     | '/service-areas/austin'
     | '/service-areas/california'
     | '/service-areas/hawaii'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/post-construction'
     | '/private-jet-cleaning'
     | '/residential'
+    | '/sitemap.xml'
     | '/service-areas/austin'
     | '/service-areas/california'
     | '/service-areas/hawaii'
@@ -257,6 +269,7 @@ export interface RootRouteChildren {
   PostConstructionRoute: typeof PostConstructionRoute
   PrivateJetCleaningRoute: typeof PrivateJetCleaningRoute
   ResidentialRoute: typeof ResidentialRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServiceAreasAustinRoute: typeof ServiceAreasAustinRoute
   ServiceAreasCaliforniaRoute: typeof ServiceAreasCaliforniaRoute
   ServiceAreasHawaiiRoute: typeof ServiceAreasHawaiiRoute
@@ -351,6 +364,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResidentialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/service-areas/': {
       id: '/service-areas/'
       path: '/service-areas'
@@ -409,6 +429,7 @@ const rootRouteChildren: RootRouteChildren = {
   PostConstructionRoute: PostConstructionRoute,
   PrivateJetCleaningRoute: PrivateJetCleaningRoute,
   ResidentialRoute: ResidentialRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServiceAreasAustinRoute: ServiceAreasAustinRoute,
   ServiceAreasCaliforniaRoute: ServiceAreasCaliforniaRoute,
   ServiceAreasHawaiiRoute: ServiceAreasHawaiiRoute,
