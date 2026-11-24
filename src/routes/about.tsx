@@ -16,7 +16,7 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Clean, bright professional interior"
       h1="About TNT Domestics"
-      answer="TNT Domestics is a minority- and woman-owned, HUB certified cleaning company in San Antonio, Texas, led by Project Manager Tara Sydnor. We clean government facilities, commercial buildings, luxury homes, new construction and private aircraft under clear, written scopes of work."
+      answer="TNT Domestics is a minority- and woman-owned cleaning company in San Antonio, Texas, built on one idea: exceptional service is never accidental — it is engineered. We clean offices, healthcare facilities, day care centers, construction projects, aircraft and private residences with trained people, proven processes and premium products."
       listEyebrow="Credentials"
       listHeadline="Certified and Registered"
       items={[

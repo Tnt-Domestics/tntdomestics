@@ -1,11 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
-import { pageHead } from "@/lib/seo";
+import StandardsList from "@/components/StandardsList";
+import { pageHead, faqJsonLd } from "@/lib/seo";
 import hero from "@/assets/residential-3.jpg";
 
+const faqs = [
+  {
+    "q": "Do you clean vacation homes in Wailea and Kapalua?",
+    "a": "Yes. We offer contracted programs for Maui vacation estates, including preparation before arrival and close-out after departure."
+  },
+  {
+    "q": "Can you look after my Hawaii home while I'm on the mainland?",
+    "a": "Yes. Recurring visits keep the home clean and ready, and we can send a photo report after each visit."
+  },
+  {
+    "q": "How do Hawaii programs start?",
+    "a": "Call 830-500-5791 or book online to scope your residence and agree a written service plan."
+  }
+];
+
 export const Route = createFileRoute("/service-areas/hawaii")({
-  head: () => pageHead("/service-areas/hawaii/", "Luxury Home & Vacation Estate Cleaning Hawaii | Kahala, Wailea", "Contracted luxury home and vacation-estate cleaning in Kahala, Diamond Head, Lanikai, Wailea, Kapalua, the Kohala Coast and Princeville, Hawaii."),
+  head: () => ({
+    ...pageHead("/service-areas/hawaii/", "Luxury Home & Vacation Estate Cleaning Hawaii | Kahala, Wailea", "Contracted luxury home and vacation-estate cleaning in Kahala, Diamond Head, Lanikai, Wailea, Kapalua, the Kohala Coast and Princeville, Hawaii."),
+    scripts: [faqJsonLd(faqs)],
+  }),
   component: Page,
 });
 
@@ -16,33 +35,48 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Organized wardrobe in a Hawaii vacation estate"
       h1="Luxury Home & Vacation Estate Cleaning in Hawaii"
-      answer="TNT Domestics, headquartered in San Antonio, provides contracted cleaning for luxury homes and vacation estates in Hawaii, on Oʻahu, Maui, the Big Island and Kauaʻi. Our programs keep island properties guest-ready between visits, with humidity- and salt-aware care."
-      listEyebrow="Island Programs"
-      listHeadline="Care for Island Homes"
+      answer="TNT Domestics provides contracted cleaning for oceanfront residences and vacation estates on Oahu, Maui, Hawaii Island and Kauai. Programs cover recurring housekeeping, preparation before owners or guests arrive, close-out after departure, and the salt-air and humidity care island homes need."
+      listEyebrow="Programs"
+      listHeadline="Programs"
       items={[
-        { title: "Pre-arrival preparation", description: "Fresh linens, aired rooms and a spotless home when you land." },
-        { title: "Departure closing", description: "Secure, clean shutdown between owner stays." },
-        { title: "Humidity and mildew prevention", description: "Attention to closets, fabrics and teak in a tropical climate." },
-        { title: "Lanai and outdoor living", description: "Salt and sand removal from furniture, glass and railings." },
-        { title: "Guest and rental turnovers", description: "Fast, consistent resets between guests." },
-        { title: "Property-manager reporting", description: "Photo notes and written logs after each visit." },
-      ]}
-      faqs={[
-        { q: "Which Hawaiian islands do you serve?", a: "We serve luxury homes on Oʻahu, Maui, the Big Island and Kauaʻi. Call 830-500-5791 to confirm coverage for your address." },
-        { q: "Can you care for our home while we are away?", a: "Yes. We offer scheduled check-in cleans that address humidity, dust and salt build-up between owner visits." },
-        { q: "Do you handle vacation-rental turnovers?", a: "Yes. We provide guest turnovers and coordinate with your property manager on timing and supplies." },
-      ]}
+  {
+    "title": "Recurring housekeeping",
+    "description": "Ongoing care under a signed agreement."
+  },
+  {
+    "title": "Pre-arrival & departure service",
+    "description": "Fresh linens, stocked essentials and a spotless home before you land; a full close-out when you leave."
+  },
+  {
+    "title": "Salt-air & humidity care",
+    "description": "Glass, fixtures, outdoor furniture and mildew prevention."
+  }
+]}
+      faqs={faqs}
     >
-      <NeighborhoodList
-        headline="Hawaii Communities We Serve"
-        areas={[
-          { name: "Kahala & Diamond Head, Oʻahu", blurb: "Oceanfront and hillside estates near Honolulu that need steady, salt-aware upkeep." },
-          { name: "Lanikai, Oʻahu", blurb: "Beachfront homes on the windward side where sand and humidity call for frequent care." },
-          { name: "Wailea & Kapalua, Maui", blurb: "Resort-area vacation estates kept guest-ready between owner and family visits." },
-          { name: "Kohala Coast, Big Island", blurb: "Expansive homes in resort communities, with lanai and outdoor living care." },
-          { name: "Princeville, Kauaʻi", blurb: "North Shore properties where rainfall and humidity make mildew prevention a priority." },
-        ]}
-      />
+      <NeighborhoodList eyebrow="Communities we serve" headline="Communities we serve" areas={[
+  {
+    "name": "Kahala, Diamond Head & Portlock (Oahu)",
+    "blurb": "Oceanfront Honolulu estates where salt spray and humidity call for regular glass, metal and mildew-prevention care."
+  },
+  {
+    "name": "Lanikai & Kailua (Oahu)",
+    "blurb": "Windward beach homes, including upkeep while owners are away."
+  },
+  {
+    "name": "Wailea & Kapalua (Maui)",
+    "blurb": "Resort-area residences and vacation estates, prepared before arrival and closed out after."
+  },
+  {
+    "name": "Kohala Coast (Hawaii Island)",
+    "blurb": "Residences in resort communities like Hualālai and Mauna Kea, with turnovers built around owner and guest stays."
+  },
+  {
+    "name": "Princeville (Kauai)",
+    "blurb": "North Shore homes needing consistent care between visits."
+  }
+]} />
+      <StandardsList items={["Background-checked, NDA-bound personnel", "Flexible scheduling around arrivals and departures", "Photo report after each visit on request", "Written scope and service logs"]} />
     </ContentPage>
   );
 }

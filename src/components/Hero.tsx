@@ -30,15 +30,12 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
-            Where Precision, Trust, and Excellence{' '}
-            <span className="text-primary">Define Every Clean</span>
+            Luxury Estate Cleaning for San Antonio, Austin, California & Hawaii
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in-up animation-delay-100">
-            TNT Domestics delivers professional cleaning solutions for{' '}
-            <strong className="text-primary-foreground">government facilities, commercial environments, and luxury residences</strong>
-            —with the systems, people, and standards required to perform at the highest level.
+            TNT Domestics is a certified minority- and woman-owned cleaning company based in San Antonio, Texas. We provide white-glove estate housekeeping in San Antonio's and Austin's most distinguished neighborhoods, from Alamo Heights and Olmos Park to West Lake Hills, with contracted programs for luxury homes in California and Hawaii. We also handle government, commercial, post-construction and private aircraft cleaning.
           </p>
 
           {/* Trust indicators */}

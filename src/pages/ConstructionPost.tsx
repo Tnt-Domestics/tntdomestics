@@ -13,9 +13,9 @@ const ConstructionPost = () => (
     badgeIcon={HardHat}
     heroImage={hero}
     heroImageAlt="Newly constructed interior awaiting post-construction cleanup"
-    title="Post-Construction Cleaning"
-    titleAccent="From Rough to Turnover-Ready."
-    tagline="Precision cleanup of newly built and renovated spaces—drywall dust, adhesive residue, debris, and final polish handled so the space is inspection-ready and safe for occupancy."
+    title="Post-Construction Cleaning in San Antonio for Builders & Contractors"
+    titleAccent=""
+    tagline="TNT Domestics provides rough, final and touch-up post-construction cleaning for general contractors, builders and developers in San Antonio and across Texas. We remove debris, drywall dust and residue, detail fixtures and glass, and schedule around your punch list so the space is ready for inspection and occupancy."
     introEyebrow="Rough, Final & Touch-Up"
     introHeadline="Every Phase of the"
     introHeadlineAccent="Handover"

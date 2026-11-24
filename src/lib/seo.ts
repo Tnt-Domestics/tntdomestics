@@ -24,3 +24,15 @@ export function pageHead(path: string, title: string, description: string) {
     links: [{ rel: "canonical", href: url }],
   };
 }
+
+/** FAQPage JSON-LD for plain-text FAQs (only pages the owner asked for). */
+export function faqJsonLd(faqs: { q: string; a: string }[]) {
+  return {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    }),
+  };
+}

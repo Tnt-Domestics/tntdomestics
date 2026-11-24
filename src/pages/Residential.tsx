@@ -13,9 +13,9 @@ const Residential = () => (
     badgeIcon={Home}
     heroImage={hero}
     heroImageAlt="Luxury residential living room"
-    title="Luxury Residential Cleaning"
-    titleAccent="Discreet. Detailed. Trusted."
-    tagline="Contractual, white-glove cleaning for private estates, penthouses, and second homes—delivered by vetted professionals who understand the standards of high-end living."
+    title="Luxury House Cleaning & Estate Housekeeping"
+    titleAccent=""
+    tagline="TNT Domestics provides discreet, white-glove house cleaning for estates, penthouses and second homes in San Antonio's and Austin's finest neighborhoods, with contracted programs in California and Hawaii. Every home gets a signed service agreement, a dedicated crew and a documented cleaning protocol, from weekly housekeeping to seasonal deep cleans."
     introEyebrow="Private Residence Standards"
     introHeadline="Care Tailored to"
     introHeadlineAccent="Your Home"

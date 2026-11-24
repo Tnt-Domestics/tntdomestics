@@ -13,9 +13,9 @@ const Commercial = () => (
     badgeIcon={Building2}
     heroImage={hero}
     heroImageAlt="Modern commercial office lobby"
-    title="Government & Commercial Cleaning"
-    titleAccent="Built for Compliance."
-    tagline="Office buildings, healthcare environments, and government facilities serviced with consistency, accountability, and documented quality—every shift, every site."
+    title="Commercial Cleaning & Janitorial Services in San Antonio"
+    titleAccent=""
+    tagline="TNT Domestics provides recurring commercial janitorial service in San Antonio and across Texas for offices, medical clinics, campuses and multi-tenant properties. Programs include nightly cleaning, day porters, restroom and break-room service, floor care and electrostatic disinfection, with documented inspections delivered to facility managers."
     introEyebrow="Institutional Grade"
     introHeadline="Programs Structured for"
     introHeadlineAccent="Regulated Environments"

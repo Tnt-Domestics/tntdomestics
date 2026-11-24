@@ -1,11 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
 import ContentPage from "@/components/ContentPage";
 import NeighborhoodList from "@/components/NeighborhoodList";
-import { pageHead } from "@/lib/seo";
+import StandardsList from "@/components/StandardsList";
+import { pageHead, faqJsonLd } from "@/lib/seo";
 import hero from "@/assets/residential-2.jpg";
 
+const faqs = [
+  {
+    "q": "Do you clean homes in Atherton and Beverly Hills?",
+    "a": "Yes. We offer contracted estate programs in the Peninsula (Atherton, Hillsborough, Woodside, Los Altos Hills) and on LA's Westside (Beverly Hills, Bel Air, Brentwood)."
+  },
+  {
+    "q": "Do you clean homes rebuilt after the Palisades and Malibu fires?",
+    "a": "Yes. We provide post-construction and move-in cleaning for rebuilt homes so they're ready to occupy."
+  },
+  {
+    "q": "How do California programs start?",
+    "a": "Call 830-500-5791 or book online. We scope the residence, agree a written service plan and assign a dedicated team."
+  }
+];
+
 export const Route = createFileRoute("/service-areas/california")({
-  head: () => pageHead("/service-areas/california/", "Estate Housekeeping Atherton, Beverly Hills, Newport & La Jolla", "Contracted luxury estate cleaning in Atherton, Hillsborough, Woodside, Beverly Hills, Bel Air, Malibu, Newport Beach, Rancho Santa Fe and La Jolla, California."),
+  head: () => ({
+    ...pageHead("/service-areas/california/", "Estate Housekeeping Atherton, Beverly Hills, Newport & La Jolla", "Contracted luxury estate cleaning in Atherton, Hillsborough, Woodside, Beverly Hills, Bel Air, Malibu, Newport Beach, Rancho Santa Fe and La Jolla, California."),
+    scripts: [faqJsonLd(faqs)],
+  }),
   component: Page,
 });
 
@@ -16,33 +35,48 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Spa-like primary bathroom in a California estate"
       h1="Luxury Estate Cleaning in California"
-      answer="TNT Domestics, a San Antonio-based estate cleaning company, runs contracted housekeeping programs for luxury properties in California, from the Peninsula estates of Atherton and Woodside to coastal homes in Malibu, Newport Beach and La Jolla. Each program is set up under a written agreement with a dedicated crew."
-      listEyebrow="California Programs"
-      listHeadline="Contracted Estate Housekeeping"
+      answer="TNT Domestics runs contracted estate programs for private residences in California's most exclusive communities: the Peninsula, Los Angeles' Westside, the Orange County coast and coastal San Diego. Programs are scoped in a written agreement with a dedicated team and documented protocols."
+      listEyebrow="Programs"
+      listHeadline="Programs"
       items={[
-        { title: "Full-estate programs", description: "Main house, guest houses, pool houses and staff quarters." },
-        { title: "Coastal-home care", description: "Salt-air film removal on glass, metals and outdoor living areas." },
-        { title: "Collection-safe detailing", description: "Careful dusting around art, wine rooms and display pieces." },
-        { title: "Low-VOC products", description: "Non-toxic options for families and sensitive environments." },
-        { title: "Seasonal-residence service", description: "Opening, closing and pre-arrival preparation." },
-        { title: "Household-manager coordination", description: "One point of contact and written service logs." },
-      ]}
-      faqs={[
-        { q: "Is TNT Domestics active in California?", a: "Yes. We run contracted estate programs in the Bay Area Peninsula, Los Angeles, Orange County and San Diego County." },
-        { q: "Do you work with estate and household managers?", a: "Yes. Most California programs are coordinated through a house manager or family office, with written logs after each visit." },
-        { q: "Can you prepare a seasonal home before we arrive?", a: "Yes. We offer pre-arrival cleans, linen preparation and closing service when you leave." },
-      ]}
+  {
+    "title": "Estate housekeeping",
+    "description": "Recurring service under a signed agreement."
+  },
+  {
+    "title": "Rebuild & new-construction cleaning",
+    "description": "Rough, final and touch-up cleans before move-in."
+  },
+  {
+    "title": "Seasonal and second-home care",
+    "description": "Opening, closing and pre-arrival preparation."
+  }
+]}
+      faqs={faqs}
     >
-      <NeighborhoodList
-        headline="California Communities We Serve"
-        areas={[
-          { name: "Atherton, Hillsborough & Woodside", blurb: "Large Peninsula estates on wooded lots, often with multiple structures and household staff." },
-          { name: "Beverly Hills & Bel Air", blurb: "Architectural landmark homes where discretion, NDAs and finish-specific care come first." },
-          { name: "Malibu", blurb: "Oceanfront homes where salt air demands frequent glass, metal and deck care." },
-          { name: "Newport Beach", blurb: "Harbor and bluff-top residences, including second homes needing turnover service." },
-          { name: "Rancho Santa Fe & La Jolla", blurb: "Spanish Revival estates and coastal homes across San Diego County." },
-        ]}
-      />
+      <NeighborhoodList eyebrow="Communities we serve" headline="Communities we serve" areas={[
+  {
+    "name": "Atherton, Hillsborough, Woodside & Los Altos Hills",
+    "blurb": "Large Peninsula estates where our crews work alongside house managers and existing household staff."
+  },
+  {
+    "name": "Beverly Hills, Bel Air & Brentwood",
+    "blurb": "High-profile residences where discretion, NDAs and consistent personnel come first."
+  },
+  {
+    "name": "Malibu & Pacific Palisades",
+    "blurb": "Oceanfront homes and residences being rebuilt after the 2025 wildfires, with post-construction and move-in cleaning before occupancy."
+  },
+  {
+    "name": "Newport Beach, Corona del Mar & Laguna Beach",
+    "blurb": "Coastal homes where salt air means regular glass, metal and outdoor-living care."
+  },
+  {
+    "name": "Rancho Santa Fe, La Jolla & Del Mar",
+    "blurb": "Estates and ocean-view homes in coastal San Diego County."
+  }
+]} />
+      <StandardsList items={["Background-checked, NDA-bound personnel", "Coordination with house managers and staff", "Material-safe products for stone, wood and metals", "Written scope and service logs"]} />
     </ContentPage>
   );
 }

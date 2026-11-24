@@ -28,9 +28,9 @@ function Page() {
       <Header />
       <main className="pt-36">
         <div className="container-narrow mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Cleaning Service FAQ</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h1>
           <p className="text-lg text-muted-foreground">
-            TNT Domestics is a San Antonio, Texas cleaning company serving commercial, government, residential, construction and aviation clients. Below are answers to the questions we hear most about pricing, service areas, certifications and scheduling.
+            Quick answers about TNT Domestics' commercial, government, residential, post-construction and aviation cleaning services in San Antonio, Texas and beyond.
           </p>
         </div>
         {groups.map((g, i) => (

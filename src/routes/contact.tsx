@@ -7,7 +7,7 @@ import { pageHead } from "@/lib/seo";
 import { homeFaqs } from "@/content/faqs";
 
 export const Route = createFileRoute("/contact")({
-  head: () => pageHead("/contact/", "Contact TNT Domestics | Cleaning Quote", "Call TNT Domestics at 830-500-5791 or request a cleaning quote online. San Antonio based, serving Texas, California and Hawaii. Replies within 24 business hours."),
+  head: () => pageHead("/contact/", "Contact TNT Domestics | Cleaning Quote | 830-500-5791", "Request a cleaning quote from TNT Domestics in San Antonio, TX. Call 830-500-5791 or email. We respond within 24 business hours."),
   component: Page,
 });
 
@@ -17,9 +17,9 @@ function Page() {
       <Header />
       <main className="pt-36">
         <div className="container-narrow mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Contact TNT Domestics</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Request a Cleaning Quote</h1>
           <p className="text-lg text-muted-foreground">
-            Call TNT Domestics in San Antonio at 830-500-5791, email us or request a cleaning quote online. We respond to every inquiry within 24 business hours.
+            Call 830-500-5791, email management@tntdomestics.com or submit the quote form. We respond to all inquiries within 24 business hours.
           </p>
         </div>
         <Contact />

@@ -80,13 +80,11 @@ const PrivateJet = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
-                Private Jet Cleaning{' '}
-                <span className="text-primary">Worthy of the Cabin</span>
+                Private Jet & Aircraft Cleaning in San Antonio and Texas
               </h1>
 
               <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in-up animation-delay-100">
-                Meticulous interior and exterior aircraft care for owners, operators, and charter fleets.
-                Discretion, precision, and turnaround times built for aviation.
+                TNT Domestics' aviation division cleans private and charter aircraft for owners, operators and corporate flight departments in San Antonio and across Texas. Services include cabin interior detailing, sanitization of galleys and lavatories, window care, exterior wash and polish, and quick post-charter turnarounds using aviation-approved products.
               </p>
 
               <p className="text-xl text-primary font-semibold mb-8 animate-fade-in-up animation-delay-300">

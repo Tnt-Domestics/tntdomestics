@@ -15,8 +15,8 @@ function Page() {
       eyebrow="Government Contracting"
       heroImage={hero}
       heroImageAlt="Uniformed cleaner in a public building lobby"
-      h1="Government Facility Cleaning Contractor in Texas"
-      answer="TNT Domestics is a HUB, MBE and WBE certified janitorial contractor based in San Antonio, cleaning government facilities across Texas. We are SAM registered (UEI Z11EBUHZY3U5) under NAICS 561720 and 562119, and perform as a prime or as a subcontractor."
+      h1="Government Facility Cleaning Contractor — HUB, MBE & WBE Certified"
+      answer="TNT Domestics is a SAM-registered janitorial contractor (UEI Z11EBUHZY3U5) certified as a HUB, MBE, WBE, SBE and AABE business. We perform cleaning for government offices and public facilities under NAICS 561720 (Janitorial Services) and 562119 (Other Waste Collection), and can serve as a prime contractor or subcontractor to help primes meet diversity goals."
       listHeadline="Janitorial Scopes for Public Facilities"
       items={[
         { title: "Recurring janitorial service", description: "Nightly and day-porter cleaning for offices, courthouses and administrative buildings." },

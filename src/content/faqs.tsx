@@ -54,8 +54,8 @@ export const aviationFaqs: Faq[] = [
 ];
 
 export const serviceAreaFaqs: Faq[] = [
-  { q: 'Do you serve New Braunfels and Boerne?', a: 'Yes. We serve the greater San Antonio area, including New Braunfels, Boerne, Schertz and Seguin.' },
-  { q: 'Do you work outside Texas?', a: <>Yes. We offer contracted programs in California and Hawaii. Call <Tel /> to confirm coverage for your location.</> },
+  { q: 'Do you serve homes outside these neighborhoods?', a: "Our residential program is designed for estates and large private residences. If your home is nearby, call 830-500-5791 and we'll confirm availability." },
+  { q: 'Do you clean commercial and government facilities in these markets too?', a: 'Yes. Commercial, government and post-construction work is quoted separately across Texas, California and Hawaii.' },
 ];
 
 export const aboutFaqs: Faq[] = [

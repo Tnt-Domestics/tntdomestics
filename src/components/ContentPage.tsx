@@ -16,8 +16,8 @@ type Props = {
   h1: string;
   answer: ReactNode;
   listEyebrow?: string;
-  listHeadline: string;
-  items: ListItem[];
+  listHeadline?: string;
+  items?: ListItem[];
   children?: ReactNode;
   faqs: Faq[];
   ctaHeadline?: string;
@@ -25,7 +25,7 @@ type Props = {
 };
 
 const ContentPage = ({
-  eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items, children, faqs,
+  eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items = [], children, faqs,
   ctaHeadline = 'Request Your Free Quote',
   ctaBody = 'Tell us about your property and we respond within 24 business hours.',
 }: Props) => (
@@ -58,6 +58,7 @@ const ContentPage = ({
         </div>
       </section>
 
+      {items.length > 0 && (
       <section className="section-padding bg-muted/30">
         <div className="container-wide mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -79,6 +80,7 @@ const ContentPage = ({
           </ul>
         </div>
       </section>
+      )}
 
       {children}
 

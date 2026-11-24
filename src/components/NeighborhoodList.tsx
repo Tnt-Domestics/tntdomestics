@@ -1,10 +1,10 @@
-type Props = { headline: string; areas: { name: string; blurb: string }[] };
+type Props = { headline: string; eyebrow?: string; areas: { name: string; blurb: string }[] };
 
-const NeighborhoodList = ({ headline, areas }: Props) => (
+const NeighborhoodList = ({ headline, eyebrow = 'Neighborhoods', areas }: Props) => (
   <section className="section-padding bg-background">
     <div className="container-wide mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">Neighborhoods</span>
+        <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-4 block">{eyebrow}</span>
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">{headline}</h2>
       </div>
       <div className="grid md:grid-cols-2 gap-6">
