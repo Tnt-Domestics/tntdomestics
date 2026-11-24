@@ -65,6 +65,17 @@ export const submitBooking = createServerFn({ method: "POST" })
     }
     if (row) await supabaseAdmin.from("booking_requests").update({ crm_status: crm }).eq("id", row.id);
 
+    // 3. Notify management by email.
+    try {
+      const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+      await sendTemplateEmail("new-booking", "management@tntdomestics.com", {
+        templateData: { ...data, crm_status: crm },
+        idempotencyKey: `new-booking-${data.event_id}`,
+      });
+    } catch (e) {
+      console.error("Booking notification email failed", e);
+    }
+
     if (!row && crm !== "sent") return { ok: false as const, reason: "not_saved" };
     return { ok: true as const };
   });

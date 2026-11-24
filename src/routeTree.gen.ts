@@ -26,6 +26,7 @@ import { Route as ServiceAreasAustinRouteImport } from './routes/service-areas/a
 import { Route as ServiceAreasCaliforniaRouteImport } from './routes/service-areas/california'
 import { Route as ServiceAreasHawaiiRouteImport } from './routes/service-areas/hawaii'
 import { Route as ServiceAreasSanAntonioRouteImport } from './routes/service-areas/san-antonio'
+import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -112,6 +113,12 @@ const ServiceAreasSanAntonioRoute = ServiceAreasSanAntonioRouteImport.update({
   path: '/service-areas/san-antonio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LovableEmailTransactionalPreviewRoute =
+  LovableEmailTransactionalPreviewRouteImport.update({
+    id: '/lovable/email/transactional/preview',
+    path: '/lovable/email/transactional/preview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
   '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,6 +158,7 @@ export interface FileRoutesByTo {
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
   '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
   '/service-areas': typeof ServiceAreasIndexRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +179,7 @@ export interface FileRoutesById {
   '/service-areas/hawaii': typeof ServiceAreasHawaiiRoute
   '/service-areas/san-antonio': typeof ServiceAreasSanAntonioRoute
   '/service-areas/': typeof ServiceAreasIndexRoute
+  '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,6 +201,7 @@ export interface FileRouteTypes {
     | '/service-areas/hawaii'
     | '/service-areas/san-antonio'
     | '/service-areas/'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/service-areas/hawaii'
     | '/service-areas/san-antonio'
     | '/service-areas'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
@@ -229,6 +241,7 @@ export interface FileRouteTypes {
     | '/service-areas/hawaii'
     | '/service-areas/san-antonio'
     | '/service-areas/'
+    | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,6 +262,7 @@ export interface RootRouteChildren {
   ServiceAreasHawaiiRoute: typeof ServiceAreasHawaiiRoute
   ServiceAreasSanAntonioRoute: typeof ServiceAreasSanAntonioRoute
   ServiceAreasIndexRoute: typeof ServiceAreasIndexRoute
+  LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -372,6 +386,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServiceAreasSanAntonioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lovable/email/transactional/preview': {
+      id: '/lovable/email/transactional/preview'
+      path: '/lovable/email/transactional/preview'
+      fullPath: '/lovable/email/transactional/preview'
+      preLoaderRoute: typeof LovableEmailTransactionalPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -393,6 +414,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServiceAreasHawaiiRoute: ServiceAreasHawaiiRoute,
   ServiceAreasSanAntonioRoute: ServiceAreasSanAntonioRoute,
   ServiceAreasIndexRoute: ServiceAreasIndexRoute,
+  LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
