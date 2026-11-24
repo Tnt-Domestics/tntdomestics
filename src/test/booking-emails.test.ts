@@ -18,22 +18,20 @@ describe("quote request emails", () => {
     mocks.sendTemplateEmail.mockResolvedValue({ sent: true });
   });
 
-  it("alerts management and confirms receipt to the requester", async () => {
+  it("alerts management without sending a customer confirmation", async () => {
     await sendBookingEmails(data, "sent");
 
-    expect(mocks.sendTemplateEmail).toHaveBeenNthCalledWith(1, "new-booking", "management@tntdomestics.com", expect.objectContaining({
+    expect(mocks.sendTemplateEmail).toHaveBeenCalledTimes(1);
+    expect(mocks.sendTemplateEmail).toHaveBeenCalledWith("new-booking", "management@tntdomestics.com", expect.objectContaining({
       idempotencyKey: "new-booking-quote-123",
       replyTo: "jane@example.com",
       templateData: expect.objectContaining({ crm_status: "sent" }),
     }));
-    expect(mocks.sendTemplateEmail).toHaveBeenNthCalledWith(2, "quote-confirmation", "jane@example.com", expect.objectContaining({
-      idempotencyKey: "quote-confirmation-quote-123",
-      replyTo: "management@tntdomestics.com",
-    }));
+    expect(mocks.sendTemplateEmail).not.toHaveBeenCalledWith("quote-confirmation", expect.anything(), expect.anything());
   });
 
-  it("keeps the management alert fixed and the customer confirmation dynamic", () => {
+  it("registers only the management quote alert", () => {
     expect(TEMPLATES["new-booking"]?.to).toBe("management@tntdomestics.com");
-    expect(TEMPLATES["quote-confirmation"]?.to).toBeUndefined();
+    expect(TEMPLATES["quote-confirmation"]).toBeUndefined();
   });
 });

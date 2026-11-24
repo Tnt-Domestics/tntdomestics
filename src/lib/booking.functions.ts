@@ -41,21 +41,14 @@ async function attemptEmail(label: string, send: Promise<unknown>) {
   }
 }
 
-/** Sends the customer receipt and management alert without blocking a saved request. */
+/** Alerts management without blocking a saved request; customers are contacted personally. */
 export async function sendBookingEmails(data: BookingPayload, crm: CrmStatus) {
   const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
-  await Promise.all([
-    attemptEmail("Management quote alert", sendTemplateEmail("new-booking", "management@tntdomestics.com", {
-      templateData: { ...data, crm_status: crm },
-      idempotencyKey: `new-booking-${data.event_id}`,
-      replyTo: data.email,
-    })),
-    attemptEmail("Customer quote confirmation", sendTemplateEmail("quote-confirmation", data.email, {
-      templateData: data,
-      idempotencyKey: `quote-confirmation-${data.event_id}`,
-      replyTo: "management@tntdomestics.com",
-    })),
-  ]);
+  await attemptEmail("Management quote alert", sendTemplateEmail("new-booking", "management@tntdomestics.com", {
+    templateData: { ...data, crm_status: crm },
+    idempotencyKey: `new-booking-${data.event_id}`,
+    replyTo: data.email,
+  }));
 }
 
 /** Forwards a booking request to the CRM catch hook (Zapier / Make / GoHighLevel). */
@@ -91,7 +84,7 @@ export const submitBooking = createServerFn({ method: "POST" })
     }
     if (row) await supabaseAdmin.from("booking_requests").update({ crm_status: crm }).eq("id", row.id);
 
-    // 3. Confirm receipt to the customer and alert management.
+    // 3. Alert management; the customer is contacted personally.
     try {
       await sendBookingEmails(data, crm);
     } catch (e) {
