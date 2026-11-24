@@ -1,0 +1,296 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * - Keep every @import in this top block, above @theme and the rest of the file. Install an
+ *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
+ *   build resolves @import from the filesystem. Load those with a <link> in the head() of
+ *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The design lives in this file: oklch color tokens on the shadcn variables
+ * (--background, --foreground, --primary, --secondary, --muted, --accent, ...) plus
+ * new tokens as needed, font tokens, and custom styles and animations.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-teal-50: var(--teal-50);
+  --color-teal-100: var(--teal-100);
+  --color-teal-500: var(--teal-500);
+  --color-teal-600: var(--teal-600);
+  --color-teal-700: var(--teal-700);
+  --color-lavender-50: var(--lavender-50);
+  --color-lavender-100: var(--lavender-100);
+  --color-lavender-200: var(--lavender-200);
+  --color-lavender-500: var(--lavender-500);
+  --shadow-teal: var(--shadow-teal-value);
+  --shadow-soft: var(--shadow-md-value);
+  --shadow-elevated: var(--shadow-lg-value);
+  --shadow-floating: var(--shadow-xl-value);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* TNT Domestics brand palette, ported from the Classic theme (teal + lavender from the logo). */
+:root {
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(210 40% 14%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(210 40% 14%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(210 40% 14%);
+  --primary: hsl(187 91% 37%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(252 30% 85%);
+  --secondary-foreground: hsl(252 40% 30%);
+  --muted: hsl(210 20% 96%);
+  --muted-foreground: hsl(210 15% 45%);
+  --accent: hsl(45 80% 70%);
+  --accent-foreground: hsl(45 60% 20%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 20% 90%);
+  --input: hsl(210 20% 90%);
+  --ring: hsl(187 91% 37%);
+  --radius: 0.75rem;
+
+  --teal-50: hsl(187 91% 97%);
+  --teal-100: hsl(187 85% 92%);
+  --teal-500: hsl(187 91% 37%);
+  --teal-600: hsl(187 91% 30%);
+  --teal-700: hsl(187 91% 23%);
+  --lavender-50: hsl(252 30% 97%);
+  --lavender-100: hsl(252 30% 92%);
+  --lavender-200: hsl(252 30% 85%);
+  --lavender-500: hsl(252 40% 60%);
+
+  --gradient-hero: linear-gradient(135deg, hsl(187 91% 37%) 0%, hsl(252 40% 60%) 100%);
+  --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(252 30% 97%) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+
+  --shadow-sm-value: 0 1px 3px 0 hsl(210 20% 14% / 0.04), 0 1px 2px -1px hsl(210 20% 14% / 0.04);
+  --shadow-md-value: 0 4px 6px -1px hsl(210 20% 14% / 0.06), 0 2px 4px -2px hsl(210 20% 14% / 0.04);
+  --shadow-lg-value: 0 10px 15px -3px hsl(210 20% 14% / 0.08), 0 4px 6px -4px hsl(210 20% 14% / 0.04);
+  --shadow-xl-value: 0 20px 25px -5px hsl(210 20% 14% / 0.08), 0 8px 10px -6px hsl(210 20% 14% / 0.04);
+  --shadow-teal-value: 0 10px 40px -10px hsl(187 91% 37% / 0.25);
+
+  --sidebar-background: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+  --background: hsl(210 40% 8%);
+  --foreground: hsl(210 20% 96%);
+  --card: hsl(210 40% 12%);
+  --card-foreground: hsl(210 20% 96%);
+  --popover: hsl(210 40% 12%);
+  --popover-foreground: hsl(210 20% 96%);
+  --primary: hsl(187 80% 45%);
+  --primary-foreground: hsl(210 40% 8%);
+  --secondary: hsl(252 25% 25%);
+  --secondary-foreground: hsl(252 30% 90%);
+  --muted: hsl(210 30% 18%);
+  --muted-foreground: hsl(210 15% 65%);
+  --accent: hsl(45 70% 55%);
+  --accent-foreground: hsl(45 60% 10%);
+  --destructive: hsl(0 62% 30%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(210 30% 20%);
+  --input: hsl(210 30% 20%);
+  --ring: hsl(187 80% 45%);
+  --sidebar-background: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Tailwind v3 `container` config: centered, 2rem padding, 1400px at 2xl. */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 96rem) {
+    max-width: 1400px;
+  }
+}
+
+@utility section-padding {
+  padding: 4rem 1.5rem;
+  @media (width >= 48rem) {
+    padding: 6rem 2rem;
+  }
+  @media (width >= 64rem) {
+    padding: 8rem 3rem;
+  }
+}
+
+@utility container-narrow {
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+@utility container-wide {
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+@utility text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: var(--gradient-hero);
+}
+
+@utility glass-card {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  background: var(--gradient-glass);
+  box-shadow: var(--shadow-lg-value);
+}
+
+@utility hover-lift {
+  transition: all 300ms ease-out;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl-value);
+  }
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@utility animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@utility animation-delay-100 {
+  animation-delay: 100ms;
+}
+@utility animation-delay-200 {
+  animation-delay: 200ms;
+}
+@utility animation-delay-300 {
+  animation-delay: 300ms;
+}
+@utility animation-delay-400 {
+  animation-delay: 400ms;
+}

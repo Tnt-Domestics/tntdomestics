@@ -23,13 +23,13 @@ const Hero = () => {
       <div className="container-wide mx-auto px-6 relative z-10">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-xs border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
             <Shield className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary-foreground">Certified Government Contractor</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
             Where Precision, Trust, and Excellence{' '}
             <span className="text-primary">Define Every Clean</span>
           </h1>

@@ -103,7 +103,7 @@ const Footer = () => {
             {['AABE', 'MBE', 'SBE', 'WBE', 'HUB'].map((cert) => (
               <span
                 key={cert}
-                className="px-3 py-1 bg-primary-foreground/5 text-primary-foreground/60 text-xs font-medium rounded"
+                className="px-3 py-1 bg-primary-foreground/5 text-primary-foreground/60 text-xs font-medium rounded-[4px]"
               >
                 {cert} Certified
               </span>

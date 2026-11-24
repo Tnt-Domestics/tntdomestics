@@ -1,7 +1,7 @@
 import { ArrowRight, Plane, Sparkles, Shield, Clock, Award, CheckCircle2, Gem, Eye, Wind, Star, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import jetHero from '@/assets/jet-hero.jpg';
@@ -95,12 +95,12 @@ const PrivateJet = () => {
 
           <div className="container-wide mx-auto px-6 relative z-10">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
+              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-xs border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
                 <Plane className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-primary-foreground">Aviation Cleaning Division</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
                 Private Jet Cleaning{' '}
                 <span className="text-primary">Worthy of the Cabin</span>
               </h1>
@@ -257,7 +257,7 @@ const PrivateJet = () => {
                   height={1024}
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-xs text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                   Cabin Interior Refresh
                 </div>
               </div>
@@ -270,7 +270,7 @@ const PrivateJet = () => {
                   height={1024}
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-xs text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                   Exterior Wash & Polish
                 </div>
               </div>
@@ -283,7 +283,7 @@ const PrivateJet = () => {
                   height={1024}
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-xs text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                   Galley & Lavatory Sanitization
                 </div>
               </div>
@@ -296,7 +296,7 @@ const PrivateJet = () => {
                   height={1024}
                   className="w-full h-80 object-cover"
                 />
-                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-xs text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                   Full Fuselage Detail
                 </div>
               </div>

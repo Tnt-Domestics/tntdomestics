@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2, Clock, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -90,12 +90,12 @@ const ServicePage = ({
 
           <div className="container-wide mx-auto px-6 relative z-10">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
+              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-xs border border-primary/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
                 <BadgeIcon className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-primary-foreground">{eyebrow}</span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
                 {title} <span className="text-primary">{titleAccent}</span>
               </h1>
 
@@ -229,7 +229,7 @@ const ServicePage = ({
                     loading="lazy"
                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
+                  <div className="absolute bottom-4 left-4 bg-foreground/80 backdrop-blur-xs text-primary-foreground px-4 py-1.5 rounded-full text-sm font-semibold">
                     {item.label}
                   </div>
                 </div>

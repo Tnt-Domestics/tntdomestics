@@ -22,7 +22,7 @@ const Credentials = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* UEI & NAICS */}
-          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/10">
+          <div className="bg-primary-foreground/5 backdrop-blur-xs rounded-2xl p-8 border border-primary-foreground/10">
             <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
               <FileText className="w-7 h-7 text-primary" />
             </div>
@@ -47,7 +47,7 @@ const Credentials = () => {
           </div>
 
           {/* Certifications */}
-          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/10">
+          <div className="bg-primary-foreground/5 backdrop-blur-xs rounded-2xl p-8 border border-primary-foreground/10">
             <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
               <BadgeCheck className="w-7 h-7 text-primary" />
             </div>
@@ -69,7 +69,7 @@ const Credentials = () => {
           </div>
 
           {/* Payment */}
-          <div className="bg-primary-foreground/5 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/10">
+          <div className="bg-primary-foreground/5 backdrop-blur-xs rounded-2xl p-8 border border-primary-foreground/10">
             <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
               <CreditCard className="w-7 h-7 text-primary" />
             </div>
