@@ -46,7 +46,7 @@ function Page() {
   },
   {
     "title": "Window & glass detailing",
-    "description": "Interior glass, mirrors and fixtures left streak-free."
+    "description": "Interior glass, mirrors and fixtures left spotless."
   },
   {
     "title": "New-build & remodel cleanup",
@@ -62,7 +62,7 @@ function Page() {
       <NeighborhoodList eyebrow="Neighborhoods we serve" headline="Neighborhoods we serve" areas={[
   {
     "name": "West Lake Hills & Rollingwood",
-    "blurb": "Hillside modern homes with walls of glass, stone floors and open plans, so streak-free glass work is a big part of every visit."
+    "blurb": "Hillside modern homes with walls of glass, stone floors and open plans, so spotless glass work is a big part of every visit."
   },
   {
     "name": "Tarrytown",
@@ -81,7 +81,7 @@ function Page() {
     "blurb": "Lake Travis and Hill Country estates, including lake houses that need upkeep between visits."
   }
 ]} />
-      <StandardsList items={["Background-checked, NDA-bound personnel", "Direct point of contact", "Low-VOC and fragrance-free options", "Written scope and service logs"]} />
+      <StandardsList items={["Background-checked, NDA-bound personnel", "Direct point of contact", "Low-VOC and unscented options", "Written scope and service logs"]} />
     </ContentPage>
   );
 }

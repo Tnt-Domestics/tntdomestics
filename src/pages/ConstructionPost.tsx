@@ -47,7 +47,7 @@ const ConstructionPost = () => (
       {
         icon: Wrench,
         title: 'Punch-List Touch-Ups',
-        description: 'Return visits scheduled around your punch list so the space passes final walk-through the first time.',
+        description: 'Return visits scheduled around your punch list to prepare the space for handover.',
       },
       {
         icon: Shield,

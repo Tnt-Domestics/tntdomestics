@@ -16,7 +16,7 @@ export const Route = createFileRoute("/book")({
 
 const STEPS = [
   { icon: Phone, title: "We reach out", body: "A coordinator contacts you within one business day by your preferred method." },
-  { icon: CalendarCheck, title: "Private walkthrough", body: "We visit your home or facility to understand its surfaces, priorities and schedule." },
+  { icon: CalendarCheck, title: "Your consultation", body: "We discuss your home or facility, priorities and schedule." },
   { icon: ClipboardCheck, title: "Your written care plan", body: "You receive a tailored care plan and quote before anything is scheduled." },
   { icon: Sparkles, title: "We begin", body: "Background-checked, NDA-bound professionals follow your care plan on every visit." },
 ];
@@ -31,7 +31,7 @@ function Page() {
           <div className="container-wide mx-auto px-6">
             <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 text-sm font-medium">Private Consultations &amp; Quotes</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Schedule a Private Consultation</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Tell us about your home or facility and when you'd like to begin. A TNT Domestics coordinator will reach out within one business day to arrange a walkthrough and prepare your written care plan and quote. Commercial, government and aviation clients receive a scoped proposal.</p>
+            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Tell us about your home or facility and when you'd like to begin. A TNT Domestics coordinator will contact you within one business day to discuss your needs and prepare your written care plan and quote. Commercial, government and aviation clients receive a scoped proposal.</p>
           </div>
         </section>
         <section className="section-padding">

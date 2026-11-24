@@ -29,7 +29,7 @@ type Props = {
 const ContentPage = ({
   service, eyebrow, heroImage, heroImageAlt, h1, answer, listEyebrow = 'Services', listHeadline, items = [], children, faqs,
   ctaLabel = 'Request a Quote',
-  ctaHeadline = 'Request Your Free Quote',
+  ctaHeadline = 'Request Your Quote',
   ctaBody = 'Tell us about your property and we respond within 24 business hours.',
 }: Props) => (
   <div className="min-h-screen bg-background">

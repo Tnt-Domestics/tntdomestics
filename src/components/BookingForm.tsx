@@ -108,8 +108,8 @@ export default function BookingForm({ initialService }: { initialService?: strin
     return (
       <div className="glass-card rounded-2xl p-8 md:p-10 text-center" role="status">
         <CheckCircle2 className="w-14 h-14 text-primary mx-auto mb-4" />
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Thank you, your request is in.</h2>
-        <p className="text-muted-foreground">We'll review your details and reach out to confirm your date and price. Need us sooner? Call <a className="text-primary font-medium" href="tel:830-500-5791">830-500-5791</a>.</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Your consultation request was received.</h2>
+        <p className="text-muted-foreground">A TNT Domestics coordinator will contact you within one business day.</p>
       </div>
     );
   }
@@ -170,7 +170,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
         </Field>
         <Field label="Street address" name="address" optional>
           <input {...a('address')} aria-describedby="address-help" className={inputCls} value={v.address} onChange={set('address')} autoComplete="street-address" maxLength={200} />
-          <p id="address-help" className="mt-1 text-xs text-muted-foreground">You can share this during your consultation.</p>
+          <p id="address-help" className="mt-1 text-xs text-muted-foreground">You can share this when we speak.</p>
         </Field>
         <Field label="City" name="city" error={errors.city}>
           <input {...a('city')} className={inputCls} value={v.city} onChange={set('city')} autoComplete="address-level2" maxLength={80} />
@@ -221,7 +221,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
       <Button type="submit" size="lg" className="w-full shadow-teal" disabled={status === 'sending'}>
         {status === 'sending' ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending…</> : 'Request My Consultation'}
       </Button>
-      <p className="text-sm text-muted-foreground text-center">No obligation. We'll contact you within one business day to arrange a walkthrough.</p>
+      <p className="text-sm text-muted-foreground text-center">We'll contact you within one business day to discuss your needs. Your written care plan and quote come before anything is scheduled.</p>
     </form>
   );
 }

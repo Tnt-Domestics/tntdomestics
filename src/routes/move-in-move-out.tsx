@@ -17,7 +17,7 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Spotless empty kitchen ready for move-in"
       h1="Move-In & Move-Out Cleaning in San Antonio"
-      answer="TNT Domestics provides deep, inspection-ready move-in and move-out cleaning in San Antonio for homeowners, renters, landlords and property managers. We clean inside cabinets and appliances, bathrooms, floors, baseboards and fixtures so the property is ready for a walk-through, a listing or new occupants."
+      answer="TNT Domestics provides deep, inspection-ready move-in and move-out cleaning in San Antonio for homeowners, renters, landlords and property managers. We clean inside cabinets and appliances, bathrooms, floors, baseboards and fixtures so the property is ready for a listing or new occupants."
       listHeadline="What a Move Clean Covers"
       items={[
         { title: "Inside cabinets and drawers" },

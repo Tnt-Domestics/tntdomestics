@@ -48,7 +48,7 @@ const Residential = () => (
       {
         icon: Leaf,
         title: 'Eco-Conscious Options',
-        description: 'Non-toxic, low-VOC, and fragrance-free cleaning agents available for families and sensitive environments.',
+        description: 'Non-toxic, low-VOC, and unscented cleaning agents available for families and sensitive environments.',
       },
       {
         icon: Shield,
@@ -58,7 +58,7 @@ const Residential = () => (
       {
         icon: Shirt,
         title: 'Closet & Wardrobe Care',
-        description: 'Organized folding, garment rotation, and dust-free wardrobe maintenance for walk-in closets and dressing rooms.',
+        description: 'Organized folding, garment rotation, and thorough wardrobe dust removal for walk-in closets and dressing rooms.',
       },
       {
         icon: Wine,

@@ -20,7 +20,7 @@ export const homeFaqs: Faq[] = [
 ];
 
 export const commercialFaqs: Faq[] = [
-  { q: 'How much does commercial cleaning cost in San Antonio?', a: 'Pricing depends on square footage, cleaning frequency, type of facility and add-ons such as floor care or disinfection. TNT Domestics provides a written, itemized proposal after a walk-through, usually within 24 business hours of your request.' },
+  { q: 'How much does commercial cleaning cost in San Antonio?', a: 'Pricing depends on square footage, cleaning frequency, type of facility and add-ons such as floor care or disinfection. TNT Domestics provides a written, itemized proposal based on your facility details, usually within 24 business hours of your request.' },
   { q: 'Do you clean medical offices and clinics?', a: 'Yes. We clean healthcare environments, medical offices and day care centers using disinfection protocols for high-touch surfaces, restrooms and waiting areas.' },
   { q: 'Can you clean after business hours?', a: 'Yes. We offer day porter, evening and overnight service built around your hours, security requirements and access procedures.' },
   { q: 'Do you sign long-term janitorial contracts?', a: 'Yes. Most commercial clients are on recurring agreements with a defined scope of work, frequency and quality reporting.' },
@@ -40,7 +40,7 @@ export const governmentFaqs: Faq[] = [
 export const residentialFaqs: Faq[] = [
   { q: 'How much does a house cleaning service cost in San Antonio?', a: 'Cost depends on home size, condition, frequency and special surfaces. TNT Domestics quotes each home after reviewing your property, then puts scope and pricing in a signed service agreement.' },
   { q: 'Are your house cleaners background-checked?', a: 'Yes. All residential personnel are background-checked and sign non-disclosure agreements.' },
-  { q: 'Do you bring your own supplies?', a: 'Yes. We bring professional equipment and material-safe products, and can use non-toxic or fragrance-free products on request.' },
+  { q: 'Do you bring your own supplies?', a: 'Yes. We bring professional equipment and material-safe products, and can use non-toxic or unscented products on request.' },
   { q: 'Will I have a consistent point of contact?', a: 'Yes. Every residence has a direct point of contact and a written care plan, so your preferences are documented and followed at every visit.' },
   { q: 'How often should I schedule luxury house cleaning?', a: 'The right frequency depends on household activity, property size and how you use the residence. We offer daily, weekly and bi-weekly housekeeping programs, as well as seasonal deep cleaning. Your written care plan sets the cadence and tasks once we review the residence.' },
   { q: 'How do you clean marble, natural stone, hardwood and brass?', a: 'We select cleaning products and techniques for the specific material rather than using one product throughout the home. Your written care plan records fine finishes and special surface requirements so those details guide the service.' },
@@ -50,7 +50,7 @@ export const residentialFaqs: Faq[] = [
 ];
 
 export const constructionFaqs: Faq[] = [
-  { q: 'What is included in post-construction cleaning?', a: 'Post-construction cleaning usually has three phases: a rough clean to remove debris, a final clean to detail every surface, fixture and window, and a touch-up clean right before the final walk-through.' },
+  { q: 'What is included in post-construction cleaning?', a: 'Post-construction cleaning usually has three phases: a rough clean to remove debris, a final clean to detail every surface, fixture and window, and a touch-up clean right before handover.' },
   { q: 'How long does a post-construction clean take?', a: 'A typical final clean on a standard commercial or residential build takes about 72 hours. Faster mobilization is available for time-sensitive handovers.' },
   { q: 'Do you work with general contractors as a subcontractor?', a: 'Yes. We work directly with GCs, builders and developers, coordinate with your superintendent and can support diversity participation goals as an MBE/WBE/HUB firm.' },
   { q: 'How is construction dust removed before occupancy?', a: 'Our post-construction program includes HEPA vacuuming and removal of drywall dust, sawdust and jobsite grit. The agreed scope can also include detailing vents, registers, fixtures, cabinetry and glass before handover.' },
@@ -61,7 +61,7 @@ export const moveFaqs: Faq[] = [
   { q: 'What is the difference between move-out cleaning and regular cleaning?', a: 'Move-out cleaning covers areas regular cleaning skips, such as inside cabinets, inside the oven and refrigerator, baseboards, vents and closets, so the empty property passes inspection.' },
   { q: 'Do you clean rental turnovers for property managers?', a: 'Yes. We provide turnover cleaning between tenants and can invoice property management companies directly.' },
   { q: 'Does move-in or move-out cleaning include cabinets and appliances?', a: 'Our move-clean scope includes inside cabinets and drawers, the oven and refrigerator, along with bathrooms, floors, baseboards, vents and fixtures. Identify any specialty appliances or additional requirements when requesting your quote so the written scope is clear.' },
-  { q: 'Can move cleaning be coordinated with a listing or tenant handover?', a: 'Yes. We provide move cleaning for homeowners, renters, landlords and property managers preparing for a walk-through, listing or new occupants. Include the handover date and access details in your request; the schedule is confirmed after review.' },
+  { q: 'Can move cleaning be coordinated with a listing or tenant handover?', a: 'Yes. We provide move cleaning for homeowners, renters, landlords and property managers preparing for a listing or new occupants. Include the handover date and access details in your request; the schedule is confirmed after review.' },
 ];
 
 export const aviationFaqs: Faq[] = [
@@ -86,8 +86,8 @@ export const aboutFaqs: Faq[] = [
 ];
 
 export const bookFaqs: Faq[] = [
-  { q: 'What happens after I book?', a: 'A TNT Domestics coordinator reviews your request, confirms the date and time window, and sends a written quote. Commercial and government facilities usually get a walk-through first.' },
-  { q: 'Is there a fee to request a booking?', a: 'No. Requesting a booking or quote is free, and nothing is charged until you approve the quote.' },
+  { q: 'What happens after I submit a request?', a: 'A TNT Domestics coordinator contacts you within one business day by your preferred method to discuss your home or facility, then sends a written care plan and quote before anything is scheduled.' },
+  { q: 'Do commercial and government clients get a proposal?', a: 'Yes. Commercial, government and aviation requests receive a written, scoped proposal covering services, frequency and pricing.' },
   { q: 'Does choosing a preferred date confirm my cleaning appointment?', a: 'No. The date and time window on the form are preferences, not a confirmed appointment. Management reviews your request and contacts you to confirm availability, the cleaning scope and price before service is scheduled.' },
   { q: 'Can I request one-time cleaning or an ongoing service program?', a: 'Yes. Use the frequency field to tell us whether you need a one-time service or recurring cleaning. The appropriate scope and schedule are reviewed with you before you approve the quote.' },
   { q: 'How can I discuss special cleaning requirements before service?', a: <>Add your requirements in the quote form notes, including delicate surfaces, household preferences, facility access or handover deadlines. You can also call <Tel /> or <Mail /> to discuss the scope with management.</> },

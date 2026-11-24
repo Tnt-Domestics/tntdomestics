@@ -28,7 +28,7 @@ const PrivateJet = () => {
     {
       icon: Eye,
       title: 'Window & Glass Care',
-      description: 'Streak-free polishing of windows, mirrors, and cockpit glass using aviation-safe products.',
+      description: 'Spotless polishing of windows, mirrors, and cockpit glass using aviation-safe products.',
     },
     {
       icon: Gem,

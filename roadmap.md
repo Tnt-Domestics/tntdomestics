@@ -7,3 +7,6 @@
 
 - [x] Update consultation page, header order and CTA, form fields, hidden honeypot and step numbering
 - [x] Verify consultation validation, saved new fields, management alert payload and mobile layout
+
+- [x] Update consultation messages and FAQs; remove visit and free/no-obligation wording sitewide
+- [x] Verify updated pages and consultation thank-you state without altering submission logic
