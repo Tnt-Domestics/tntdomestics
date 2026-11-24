@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ClipboardCheck, CalendarCheck, Sparkles } from "lucide-react";
+import { ClipboardCheck, CalendarCheck, Sparkles, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
@@ -10,14 +10,15 @@ import { bookFaqs } from "@/content/faqs";
 export const Route = createFileRoute("/book")({
   validateSearch: (search: Record<string, unknown>): { service?: string } =>
     typeof search["service"] === "string" ? { service: search["service"] } : {},
-  head: () => pageHead("/book/", "Request a Cleaning Quote | TNT Domestics | TX, CA & HI", "Request a quote for residential, estate, commercial, government, post-construction, move-out or aircraft cleaning with TNT Domestics across Texas, California and Hawaii."),
+  head: () => pageHead("/book/", "Schedule a Private Consultation | TNT Domestics", "Schedule a private consultation for luxury home cleaning in San Antonio, Austin, California and Hawaii, or request a quote for commercial, government or aircraft cleaning."),
   component: Page,
 });
 
 const STEPS = [
-  { icon: ClipboardCheck, title: "We review", body: "A coordinator reviews your property, service and preferred timing." },
-  { icon: CalendarCheck, title: "We confirm date and price", body: "We contact you to confirm your date, time window and written quote." },
-  { icon: Sparkles, title: "We clean", body: "Background-checked, NDA-bound professionals arrive and follow your care plan." },
+  { icon: Phone, title: "We reach out", body: "A coordinator contacts you within one business day by your preferred method." },
+  { icon: CalendarCheck, title: "Private walkthrough", body: "We visit your home or facility to understand its surfaces, priorities and schedule." },
+  { icon: ClipboardCheck, title: "Your written care plan", body: "You receive a tailored care plan and quote before anything is scheduled." },
+  { icon: Sparkles, title: "We begin", body: "Background-checked, NDA-bound professionals follow your care plan on every visit." },
 ];
 
 function Page() {
@@ -28,9 +29,9 @@ function Page() {
       <main>
         <section className="pt-36 pb-12 bg-gradient-to-br from-teal-700 to-primary text-primary-foreground">
           <div className="container-wide mx-auto px-6">
-            <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 text-sm font-medium">Book a Cleaning</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Request a Cleaning Quote</h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Book commercial, residential, post-construction, move-out or aircraft cleaning with TNT Domestics in San Antonio, Austin and across Texas, California and Hawaii. Send your preferred date and a coordinator confirms your time window and written quote.</p>
+            <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 text-sm font-medium">Private Consultations &amp; Quotes</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">Schedule a Private Consultation</h1>
+            <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl">Tell us about your home or facility and when you'd like to begin. A TNT Domestics coordinator will reach out within one business day to arrange a walkthrough and prepare your written care plan and quote. Commercial, government and aviation clients receive a scoped proposal.</p>
           </div>
         </section>
         <section className="section-padding">
@@ -38,7 +39,7 @@ function Page() {
             <BookingForm initialService={service} />
             <aside className="glass-card rounded-2xl p-6 lg:sticky lg:top-28">
               <h2 className="text-xl font-bold text-foreground mb-5">What happens next</h2>
-              <ol className="space-y-5">
+              <ol className="list-none m-0 p-0 space-y-5">
                 {STEPS.map((s, i) => (
                   <li key={s.title} className="flex gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0"><s.icon className="w-5 h-5" /></div>

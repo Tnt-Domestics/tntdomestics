@@ -4,3 +4,6 @@
 - [x] Send a quote confirmation to the customer and a new-quote alert to management
 - [x] Test both quote email paths and verify the booking page still works
 - [x] Expand service and booking FAQs with verified answers; check accordion interactions and quote links
+
+- [x] Update consultation page, header order and CTA, form fields, hidden honeypot and step numbering
+- [x] Verify consultation validation, saved new fields, management alert payload and mobile layout

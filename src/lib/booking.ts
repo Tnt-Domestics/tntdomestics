@@ -1,13 +1,17 @@
 export const SERVICES = [
+  { value: "residential", label: "Luxury Residential / Estate Housekeeping" },
+  { value: "deep", label: "Deep Cleaning" },
+  { value: "move", label: "Move-In / Move-Out" },
+  { value: "post-construction", label: "Post-Construction / Renovation" },
+  { value: "second-home", label: "Second-Home & Pre-Arrival Care" },
   { value: "commercial", label: "Commercial Cleaning" },
   { value: "government", label: "Government Facility Cleaning" },
-  { value: "residential", label: "Luxury Residential Cleaning" },
-  { value: "deep", label: "Deep Cleaning" },
-  { value: "post-construction", label: "Post-Construction Cleaning" },
-  { value: "move", label: "Move-In / Move-Out Cleaning" },
   { value: "aviation", label: "Private Aircraft Cleaning" },
   { value: "other", label: "Other" },
 ] as const;
+
+export const CONTACT_METHODS = ['Phone call', 'Text', 'Email'] as const;
+export const REFERRAL_SOURCES = ['Referral from a friend or client', 'Realtor / builder / designer', 'Google search', 'Instagram / Facebook', 'Other'] as const;
 
 export type ServiceValue = (typeof SERVICES)[number]["value"];
 

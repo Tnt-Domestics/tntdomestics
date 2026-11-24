@@ -2,16 +2,17 @@ import { useState, type FormEvent, type ReactNode } from 'react';
 import { useServerFn } from '@tanstack/react-start';
 import { CheckCircle2, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { SERVICES, isService, serviceLabel, splitName, readAttribution, readCookie, todayISO } from '@/lib/booking';
+import { SERVICES, CONTACT_METHODS, REFERRAL_SOURCES, isService, serviceLabel, splitName, readAttribution, readCookie, todayISO } from '@/lib/booking';
 import { submitBooking } from '@/lib/booking.functions';
 
-const PROPERTY_TYPES = ['Single-family home', 'Estate', 'Condo / penthouse', 'Apartment', 'Office', 'Government facility', 'Retail / restaurant', 'Medical / clinic', 'Industrial / warehouse', 'New construction', 'Private aircraft', 'Other'];
-const FREQUENCIES = ['One-time', 'Weekly', 'Bi-weekly', 'Monthly', 'Nightly / daily (commercial)', 'Not sure yet'];
+const PROPERTY_TYPES = ['Private residence', 'Estate', 'Penthouse / condo', 'Second home / vacation home', 'Office', 'Government facility', 'Medical / clinic', 'Retail / hospitality', 'New construction / renovation', 'Private aircraft', 'Other'];
+const FREQUENCIES = ['One-time', 'Weekly', 'Twice weekly', 'Bi-weekly', 'Monthly', 'Seasonal / as needed', 'Nightly (commercial)', 'Not sure yet'];
 const TIME_WINDOWS = ['Morning (8am–12pm)', 'Afternoon (12pm–4pm)', 'Evening (4pm–8pm)', 'After hours / overnight', 'Flexible'];
 
 type Values = {
   service: string; property_type: string; approx_size: string; frequency: string; preferred_date: string; time_window: string;
   full_name: string; company: string; phone: string; email: string; address: string; city: string; zip: string; notes: string;
+  neighborhood: string; preferred_contact_method: string; referral_source: string; referred_by: string;
   sms_consent: boolean; website: string;
 };
 type Errors = Partial<Record<keyof Values, string>>;
@@ -28,7 +29,8 @@ export function validateBooking(v: Values, today: string): Errors {
   if (v.full_name.trim().length < 2) e.full_name = 'Enter your full name.';
   if (v.phone.replace(/\D/g, '').length < 10) e.phone = 'Enter a 10-digit phone number.';
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim())) e.email = 'Enter a valid email.';
-  if (v.address.trim().length < 3) e.address = 'Enter the service address.';
+  if (!v.neighborhood.trim()) e.neighborhood = 'Enter your neighborhood or community.';
+  if (!CONTACT_METHODS.some((method) => method === v.preferred_contact_method)) e.preferred_contact_method = 'Choose a preferred contact method.';
   if (v.city.trim().length < 2) e.city = 'Enter the city.';
   if (!/^\d{5}$/.test(v.zip.trim())) e.zip = 'ZIP must be 5 digits.';
   return e;
@@ -56,7 +58,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
   const send = useServerFn(submitBooking);
   const [v, setV] = useState<Values>({
     service: isService(initialService) ? initialService : '', property_type: '', approx_size: '', frequency: '', preferred_date: '', time_window: '',
-    full_name: '', company: '', phone: '', email: '', address: '', city: '', zip: '', notes: '', sms_consent: false, website: '',
+    full_name: '', company: '', phone: '', email: '', address: '', city: '', zip: '', notes: '', neighborhood: '', preferred_contact_method: '', referral_source: '', referred_by: '', sms_consent: false, website: '',
   });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
@@ -85,7 +87,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
     try {
       const res = await send({
         data: {
-          ...fields, ...splitName(v.full_name), event_id, service_label,
+          ...fields, referred_by: v.referral_source === 'Referral from a friend or client' ? v.referred_by : '', ...splitName(v.full_name), event_id, service_label,
           page_url: window.location.href, referrer: document.referrer, submitted_at: new Date().toISOString(),
           utm_source: attr['utm_source'] ?? '', utm_medium: attr['utm_medium'] ?? '', utm_campaign: attr['utm_campaign'] ?? '',
           utm_term: attr['utm_term'] ?? '', utm_content: attr['utm_content'] ?? '', gclid: attr['gclid'] ?? '', fbclid: attr['fbclid'] ?? '',
@@ -128,7 +130,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
           </select>
         </Field>
         <Field label="Approx. size" name="approx_size" error={errors.approx_size}>
-          <input {...a('approx_size')} className={inputCls} value={v.approx_size} onChange={set('approx_size')} placeholder="e.g. 4,500 sq ft or 5 bedrooms" maxLength={60} />
+          <input {...a('approx_size')} className={inputCls} value={v.approx_size} onChange={set('approx_size')} placeholder="e.g. 6,000 sq ft or 5 bed / 6 bath" maxLength={60} />
         </Field>
         <Field label="Frequency" name="frequency" error={errors.frequency}>
           <select {...a('frequency')} className={inputCls} value={v.frequency} onChange={set('frequency')}>
@@ -162,9 +164,13 @@ export default function BookingForm({ initialService }: { initialService?: strin
         </Field>
       </div>
 
-      <div className="grid sm:grid-cols-[2fr_1fr_1fr] gap-4">
-        <Field label="Service address" name="address" error={errors.address}>
-          <input {...a('address')} className={inputCls} value={v.address} onChange={set('address')} autoComplete="street-address" maxLength={200} />
+      <div className="grid sm:grid-cols-2 gap-4">
+        <Field label="Neighborhood or community" name="neighborhood" error={errors.neighborhood}>
+          <input {...a('neighborhood')} className={inputCls} value={v.neighborhood} onChange={set('neighborhood')} placeholder="e.g. Olmos Park, The Dominion, West Lake Hills" maxLength={200} required />
+        </Field>
+        <Field label="Street address" name="address" optional>
+          <input {...a('address')} aria-describedby="address-help" className={inputCls} value={v.address} onChange={set('address')} autoComplete="street-address" maxLength={200} />
+          <p id="address-help" className="mt-1 text-xs text-muted-foreground">You can share this during your consultation.</p>
         </Field>
         <Field label="City" name="city" error={errors.city}>
           <input {...a('city')} className={inputCls} value={v.city} onChange={set('city')} autoComplete="address-level2" maxLength={80} />
@@ -174,13 +180,32 @@ export default function BookingForm({ initialService }: { initialService?: strin
         </Field>
       </div>
 
+      <div className="grid sm:grid-cols-2 gap-4">
+        <Field label="Preferred contact method" name="preferred_contact_method" error={errors.preferred_contact_method}>
+          <select {...a('preferred_contact_method')} className={inputCls} value={v.preferred_contact_method} onChange={set('preferred_contact_method')} required>
+            <option value="">Select a contact method</option>
+            {CONTACT_METHODS.map((o) => <option key={o}>{o}</option>)}
+          </select>
+        </Field>
+        <Field label="How did you hear about us?" name="referral_source" optional>
+          <select {...a('referral_source')} className={inputCls} value={v.referral_source} onChange={set('referral_source')}>
+            <option value="">Select a source</option>
+            {REFERRAL_SOURCES.map((o) => <option key={o}>{o}</option>)}
+          </select>
+        </Field>
+        {v.referral_source === 'Referral from a friend or client' && (
+          <Field label="Who referred you?" name="referred_by" optional>
+            <input {...a('referred_by')} className={inputCls} value={v.referred_by} onChange={set('referred_by')} maxLength={120} />
+          </Field>
+        )}
+      </div>
+
       <Field label="Notes" name="notes" optional>
         <textarea {...a('notes')} className={inputCls} rows={4} value={v.notes} onChange={set('notes')} maxLength={2000} placeholder="Access instructions, special surfaces, pets, priorities…" />
       </Field>
 
       {/* Honeypot: hidden from people, tempting to bots */}
-      <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
-        <label htmlFor="website">Website</label>
+      <div aria-hidden="true" hidden className="hidden">
         <input id="website" name="website" tabIndex={-1} autoComplete="off" value={v.website} onChange={set('website')} />
       </div>
 
@@ -194,8 +219,9 @@ export default function BookingForm({ initialService }: { initialService?: strin
       )}
 
       <Button type="submit" size="lg" className="w-full shadow-teal" disabled={status === 'sending'}>
-        {status === 'sending' ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending…</> : 'Request Booking'}
+        {status === 'sending' ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending…</> : 'Request My Consultation'}
       </Button>
+      <p className="text-sm text-muted-foreground text-center">No obligation. We'll contact you within one business day to arrange a walkthrough.</p>
     </form>
   );
 }

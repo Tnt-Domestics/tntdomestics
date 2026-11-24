@@ -6,6 +6,7 @@ interface Props {
   service_label?: string; full_name?: string; company?: string; phone?: string; email?: string
   address?: string; city?: string; zip?: string; property_type?: string; approx_size?: string
   frequency?: string; preferred_date?: string; time_window?: string; notes?: string; sms_consent?: boolean
+  neighborhood?: string; preferred_contact_method?: string; referral_source?: string; referred_by?: string
   utm_source?: string; utm_campaign?: string; crm_status?: string
 }
 
@@ -27,6 +28,10 @@ const NewBooking = (p: Props) => (
           <Row label="Company" value={p.company} />
           <Row label="Phone" value={p.phone} />
           <Row label="Email" value={p.email} />
+          <Row label="Preferred contact method" value={p.preferred_contact_method} />
+          <Row label="Neighborhood or community" value={p.neighborhood} />
+          <Row label="How did you hear about us?" value={p.referral_source} />
+          <Row label="Referred by" value={p.referred_by} />
           <Row label="Address" value={[p.address, p.city, p.zip].filter(Boolean).join(', ')} />
           <Row label="Property type" value={p.property_type} />
           <Row label="Approx. size" value={p.approx_size} />
@@ -48,7 +53,7 @@ export const template = {
   to: 'management@tntdomestics.com',
   previewData: {
     service_label: 'Luxury Residential Cleaning', full_name: 'Jane Doe', phone: '210-555-0100', email: 'jane@example.com',
-    address: '1 Main St', city: 'San Antonio', zip: '78209', property_type: 'Estate', approx_size: '6,000 sq ft',
+    neighborhood: 'Olmos Park', preferred_contact_method: 'Phone call', referral_source: 'Referral from a friend or client', referred_by: 'Alex Smith', address: '1 Main St', city: 'San Antonio', zip: '78209', property_type: 'Estate', approx_size: '6,000 sq ft',
     frequency: 'Weekly', preferred_date: '2026-12-15', time_window: 'Morning (8am–12pm)', notes: 'Gate code at call.', sms_consent: true, crm_status: 'sent',
   },
 } satisfies TemplateEntry

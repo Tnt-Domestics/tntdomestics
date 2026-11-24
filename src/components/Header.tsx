@@ -17,13 +17,13 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '/about/' },
     { label: 'Residential', href: '/residential/' },
     { label: 'Commercial', href: '/commercial/' },
     { label: 'Government', href: '/government-cleaning/' },
     { label: 'Post-Construction', href: '/post-construction/' },
     { label: 'Aviation', href: '/aviation/' },
     { label: 'Service Areas', href: '/service-areas/' },
+    { label: 'About', href: '/about/' },
     { label: 'Contact', href: '/contact/' },
   ] as const;
 
@@ -52,7 +52,7 @@ const Header = () => {
               Email Us
             </a>
           </div>
-          <span className="text-primary-foreground/80">Government | Commercial | Luxury Residential | Aviation</span>
+          <span className="text-primary-foreground/80">Luxury Residential · Commercial · Government · Aviation</span>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -83,9 +83,9 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button variant="default" size="sm" className="ml-4" asChild>
+            <Button variant="default" size="sm" className="ml-2" asChild>
               <Link to="/book/">
-                Request a Quote
+                Schedule a Consultation
               </Link>
             </Button>
           </div>
@@ -119,7 +119,7 @@ const Header = () => {
               </div>
               <Button variant="default" className="mt-3" asChild>
                 <Link to="/book/" onClick={() => setIsMobileMenuOpen(false)}>
-                  Request a Quote
+                  Schedule a Consultation
                 </Link>
               </Button>
             </div>

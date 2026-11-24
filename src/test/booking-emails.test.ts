@@ -9,6 +9,7 @@ const data = {
   event_id: "quote-123",
   service_label: "Luxury Residential Cleaning",
   full_name: "Jane Doe",
+  neighborhood: "Olmos Park", preferred_contact_method: "Phone call", referral_source: "Referral from a friend or client", referred_by: "Alex Smith", address: "",
   email: "jane@example.com",
 } as BookingPayload;
 
@@ -25,7 +26,7 @@ describe("quote request emails", () => {
     expect(mocks.sendTemplateEmail).toHaveBeenCalledWith("new-booking", "management@tntdomestics.com", expect.objectContaining({
       idempotencyKey: "new-booking-quote-123",
       replyTo: "jane@example.com",
-      templateData: expect.objectContaining({ crm_status: "sent" }),
+      templateData: expect.objectContaining({ crm_status: "sent", neighborhood: "Olmos Park", preferred_contact_method: "Phone call", referral_source: "Referral from a friend or client", referred_by: "Alex Smith", address: "" }),
     }));
     expect(mocks.sendTemplateEmail).not.toHaveBeenCalledWith("quote-confirmation", expect.anything(), expect.anything());
   });
