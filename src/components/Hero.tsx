@@ -30,13 +30,21 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] md:leading-none mb-6 animate-fade-in-up">
-            Luxury Estate Cleaning for San Antonio, Austin, California & Hawaii
+            Luxury Home & Estate Cleaning Services
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in-up animation-delay-100">
-            TNT Domestics is a cleaning company based in San Antonio, Texas. We provide white-glove estate housekeeping in San Antonio's and Austin's most distinguished neighborhoods, from Alamo Heights and Olmos Park to West Lake Hills, with contracted programs for luxury homes in California and Hawaii. We also handle government, commercial, post-construction and private aircraft cleaning.
+          <div className="mb-8">
+          <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
+            TNT Domestics provides exceptional luxury house cleaning, estate care, and residential cleaning services for discerning homeowners in San Antonio, Alamo Heights, Olmos Park, The Dominion, and surrounding communities, including Austin and West Lake Hills.
           </p>
+          <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
+            From expansive estates and luxury residences to fine finishes and specialty surfaces, every property receives a customized written care plan. Our background-checked, NDA-bound cleaning professionals use carefully selected products appropriate for marble, natural stone, hardwood, brass, and other premium materials. Every detail is approached with discretion, professionalism, and attention to the highest standards of home care.
+          </p>
+          <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
+            With a 5.0 Google rating, TNT Domestics is trusted for luxury residential cleaning, estate maintenance, commercial cleaning, post-construction cleaning, government facilities, and private aircraft services. We also serve select luxury properties in California and Hawaii.
+          </p>
+          </div>
 
           {/* Trust indicators */}
           <div className="flex flex-wrap items-center gap-6 mb-10 animate-fade-in-up animation-delay-200">
