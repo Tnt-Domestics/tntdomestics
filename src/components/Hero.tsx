@@ -36,13 +36,13 @@ const Hero = () => {
           {/* Subheadline */}
           <div className="mb-8">
           <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
-            TNT Domestics provides exceptional luxury house cleaning, estate care, and residential cleaning services for discerning homeowners in San Antonio, Alamo Heights, Olmos Park, The Dominion, and surrounding communities, including Austin and West Lake Hills.
+            TNT Domestics provides luxury house cleaning, estate care, and residential cleaning services in San Antonio, Alamo Heights, Olmos Park, The Dominion, Austin, and West Lake Hills.
           </p>
           <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
-            From expansive estates and luxury residences to fine finishes and specialty surfaces, every property receives a customized written care plan. Our background-checked, NDA-bound cleaning professionals use carefully selected products appropriate for marble, natural stone, hardwood, brass, and other premium materials. Every detail is approached with discretion, professionalism, and attention to the highest standards of home care.
+            We specialize in caring for fine homes, estates, and premium surfaces with customized written care plans, background-checked, NDA-bound professionals, and products selected for marble, hardwood, natural stone, and brass. With a 5.0 Google rating, we deliver discreet, detail-oriented service for discerning homeowners and property managers.
           </p>
           <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
-            With a 5.0 Google rating, TNT Domestics is trusted for luxury residential cleaning, estate maintenance, commercial cleaning, post-construction cleaning, government facilities, and private aircraft services. We also serve select luxury properties in California and Hawaii.
+            Additional services include commercial, government, post-construction, and private aircraft cleaning, with select luxury residential services available in California and Hawaii.
           </p>
           </div>
 
