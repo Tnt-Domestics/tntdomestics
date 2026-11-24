@@ -36,9 +36,9 @@ export type BookingPayload = z.infer<typeof payloadSchema>;
 export const submitBooking = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => payloadSchema.parse(d))
   .handler(async ({ data }) => {
-    const url = process.env["VITE_CRM_WEBHOOK_URL"];
+    const url = process.env["CRM_WEBHOOK_URL"] || process.env["VITE_CRM_WEBHOOK_URL"];
     if (!url) {
-      console.error("Booking not forwarded: VITE_CRM_WEBHOOK_URL is not set");
+      console.error("Booking not forwarded: CRM_WEBHOOK_URL is not set");
       return { ok: false as const, reason: "not_configured" };
     }
     try {
