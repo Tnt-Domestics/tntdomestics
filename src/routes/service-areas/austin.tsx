@@ -35,7 +35,7 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Modern luxury kitchen in an Austin home"
       h1="Luxury House Cleaning in West Lake Hills, Tarrytown & Barton Creek"
-      answer="TNT Domestics provides discreet estate housekeeping for Austin's west side and central neighborhoods, from hillside contemporaries in West Lake Hills to historic homes in Old Enfield and lake houses on Lake Travis. Every home gets a written scope, a dedicated crew and a direct point of contact."
+      answer="TNT Domestics provides discreet estate housekeeping for Austin's west side and central neighborhoods, from hillside contemporaries in West Lake Hills to historic homes in Old Enfield and lake houses on Lake Travis. Every home gets a written scope and a direct point of contact."
       listEyebrow="Popular services here"
       listHeadline="Popular services here"
       items={[
@@ -80,7 +80,7 @@ function Page() {
     "blurb": "Lake Travis and Hill Country estates, including lake houses that need upkeep between visits."
   }
 ]} />
-      <StandardsList items={["Background-checked, NDA-bound personnel", "Dedicated crew and point of contact", "Low-VOC and fragrance-free options", "Written scope and service logs"]} />
+      <StandardsList items={["Background-checked, NDA-bound personnel", "Direct point of contact", "Low-VOC and fragrance-free options", "Written scope and service logs"]} />
     </ContentPage>
   );
 }

@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     "q": "How do California programs start?",
-    "a": "Call 830-500-5791 or book online. We scope the residence, agree a written service plan and assign a dedicated team."
+    "a": "Call 830-500-5791 or book online. We scope the residence, agree a written service plan and assign a direct point of contact."
   }
 ];
 
@@ -35,7 +35,7 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Spa-like primary bathroom in a California estate"
       h1="Luxury Estate Cleaning in California"
-      answer="TNT Domestics runs contracted estate programs for private residences in California's most exclusive communities: the Peninsula, Los Angeles' Westside, the Orange County coast and coastal San Diego. Programs are scoped in a written agreement with a dedicated team and documented protocols."
+      answer="TNT Domestics runs contracted estate programs for private residences in California's most exclusive communities: the Peninsula, Los Angeles' Westside, the Orange County coast and coastal San Diego. Programs are scoped in a written agreement with a direct point of contact and documented protocols."
       listEyebrow="Programs"
       listHeadline="Programs"
       items={[

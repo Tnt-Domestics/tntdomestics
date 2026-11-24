@@ -33,7 +33,7 @@ export const residentialFaqs: Faq[] = [
   { q: 'How much does a house cleaning service cost in San Antonio?', a: 'Cost depends on home size, condition, frequency and special surfaces. TNT Domestics quotes each home after a private consultation and puts scope and pricing in a signed service agreement.' },
   { q: 'Are your house cleaners background-checked?', a: 'Yes. All residential personnel are background-checked and sign non-disclosure agreements.' },
   { q: 'Do you bring your own supplies?', a: 'Yes. We bring professional equipment and material-safe products, and can use non-toxic or fragrance-free products on request.' },
-  { q: 'Will I get the same cleaners each time?', a: 'Yes. We assign a dedicated crew to each residence for consistency and privacy.' },
+  { q: 'Will I have a consistent point of contact?', a: 'Yes. Every residence has a direct point of contact and a written care plan, so your preferences are documented and followed at every visit.' },
 ];
 
 export const constructionFaqs: Faq[] = [

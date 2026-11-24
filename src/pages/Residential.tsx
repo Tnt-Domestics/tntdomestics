@@ -15,7 +15,7 @@ const Residential = () => (
     heroImageAlt="Luxury residential living room"
     title="Luxury House Cleaning & Estate Housekeeping"
     titleAccent=""
-    tagline="TNT Domestics provides discreet, white-glove house cleaning for estates, penthouses and second homes in San Antonio's and Austin's finest neighborhoods, with contracted programs in California and Hawaii. Every home gets a signed service agreement, a dedicated crew and a documented cleaning protocol, from weekly housekeeping to seasonal deep cleans."
+    tagline="TNT Domestics provides discreet, white-glove house cleaning for estates, penthouses and second homes in San Antonio's and Austin's finest neighborhoods, with contracted programs in California and Hawaii. Every home gets a signed service agreement, a direct point of contact and a documented cleaning protocol, from weekly housekeeping to seasonal deep cleans."
     introEyebrow="Private Residence Standards"
     introHeadline="Care Tailored to"
     introHeadlineAccent="Your Home"
@@ -67,10 +67,10 @@ const Residential = () => (
     standardsEyebrow="How We Operate"
     standardsHeadline="Standards Worthy of a"
     standardsHeadlineAccent="Private Estate"
-    standardsBlurb="Every home is different. Every home receives a documented protocol, a dedicated point of contact, and a consistent team that knows your preferences by heart."
+    standardsBlurb="Every home is different. Every home receives a documented protocol, a written care plan, and a direct point of contact who keeps your preferences documented."
     standards={[
       'Background-checked, NDA-bound personnel',
-      'Dedicated crews for continuity of care',
+      'Written care plans for continuity of care',
       'Material-safe products for stone, wood, and metals',
       'Documented scope of work and service logs',
       'Flexible scheduling around your household',

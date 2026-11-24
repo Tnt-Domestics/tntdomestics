@@ -35,7 +35,7 @@ function Page() {
       heroImage={hero}
       heroImageAlt="Formal living room in a San Antonio estate"
       h1="Luxury House Cleaning in Alamo Heights, Olmos Park & The Dominion"
-      answer="TNT Domestics is a San Antonio company, and these are our home neighborhoods. We provide recurring estate housekeeping, deep cleaning and fine-finish care for historic homes inside Loop 410 and for gated estates on the northwest side and in the Hill Country, with the same dedicated crew at every visit."
+      answer="TNT Domestics is a San Antonio company, and these are our home neighborhoods. We provide recurring estate housekeeping, deep cleaning and fine-finish care for historic homes inside Loop 410 and for gated estates on the northwest side and in the Hill Country with a written care plan and a direct point of contact."
       listEyebrow="Popular services here"
       listHeadline="Popular services here"
       items={[
@@ -88,7 +88,7 @@ function Page() {
     "blurb": "Hill Country estates and second homes, including pre-arrival preparation when owners have been away."
   }
 ]} />
-      <StandardsList items={["Background-checked, NDA-bound personnel", "Same dedicated crew every visit", "Gate and alarm protocols followed", "Material-safe products for stone, wood and brass"]} />
+      <StandardsList items={["Background-checked, NDA-bound personnel", "Direct point of contact", "Gate and alarm protocols followed", "Material-safe products for stone, wood and brass"]} />
     </ContentPage>
   );
 }
