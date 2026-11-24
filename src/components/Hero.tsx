@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, Shield, Star, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroAsset from '@/assets/luxury-estate-home.jpg.asset.json';
+import heroImage from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroAsset.url}
+          src={heroImage}
           alt=""
           className="w-full h-full object-cover"
         />
