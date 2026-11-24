@@ -2,8 +2,6 @@ import { pageGraph } from "@/lib/structured-data";
 import type { Faq } from "@/components/FaqSection";
 
 export const SITE_URL = "https://tntdomestics.com";
-export const SITE_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/adyVOw87h7dJofGVOZSlwtrswfF3/social-images/social-1784696072387-Screenshot_2026-07-21_at_11.52.00_PM.webp";
 export const EMAIL = "management@tntdomestics.com";
 export const PHONE = "830-500-5791";
 

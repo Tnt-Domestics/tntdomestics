@@ -14,3 +14,4 @@
 
 - Public sitemap paths derive from the router with required staticData.sitemap decisions; sitemapLastmod records only a fixed, significant page-content update date. Why: new routes stay explicit and sitemap generation never fabricates freshness.
 - Per-page pageHead emits one structured-data graph through the browser-safe structured-data helper; linked FAQ answers use text-bearing React elements. Why: identical FAQ text can be read during SSR without rendering a second tree.
+- Homepage sharing tags use the same CDN photo as its visible background, with an absolute public-domain URL and a 1200×630 rendition. Why: share previews stay aligned with the page and load quickly.

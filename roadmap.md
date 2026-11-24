@@ -1,4 +1,6 @@
 # Roadmap
+- [x] Create a new luxury home photo and use it for the homepage and shared-link thumbnail
+- [x] Verify thumbnail image size and homepage sharing tags
 - [x] Install route-derived sitemap with page-specific lastmod and update robots.txt
 - [x] Add per-page server-rendered business, page, breadcrumb, service and matching FAQ schema; add llms.txt
 - [x] Update homepage H1 and noindex 404 title; verify pages
