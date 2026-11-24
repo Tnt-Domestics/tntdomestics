@@ -39,10 +39,10 @@ const Hero = () => {
             TNT Domestics provides luxury house cleaning, estate care, and residential cleaning services in San Antonio, Alamo Heights, Olmos Park, The Dominion, Austin, and West Lake Hills.
           </p>
           <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
-            We specialize in caring for fine homes, estates, and premium surfaces with customized written care plans, background-checked, NDA-bound professionals, and products selected for marble, hardwood, natural stone, and brass. With a 5.0 Google rating, we deliver discreet, detail-oriented service for discerning homeowners and property managers.
+            We specialize in caring for fine homes, estates, and premium surfaces through customized written care plans, background-checked, NDA-bound professionals, and products selected for marble, hardwood, natural stone, and brass. With a 5.0 Google rating, we deliver discreet, detail-oriented service for discerning homeowners and property managers.
           </p>
           <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-2xl animate-fade-in-up animation-delay-100">
-            Additional services include commercial, government, post-construction, and private aircraft cleaning, with select luxury residential services available in California and Hawaii.
+            Our comprehensive services also include commercial, government, post-construction, and private aircraft cleaning. TNT Domestics serves clients throughout California and Hawaii with its full range of residential, commercial, government, post-construction, and specialty cleaning services.
           </p>
           </div>
 
