@@ -35,7 +35,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in-up animation-delay-100">
-            TNT Domestics is a certified minority- and woman-owned cleaning company based in San Antonio, Texas. We provide white-glove estate housekeeping in San Antonio's and Austin's most distinguished neighborhoods, from Alamo Heights and Olmos Park to West Lake Hills, with contracted programs for luxury homes in California and Hawaii. We also handle government, commercial, post-construction and private aircraft cleaning.
+            TNT Domestics is a cleaning company based in San Antonio, Texas. We provide white-glove estate housekeeping in San Antonio's and Austin's most distinguished neighborhoods, from Alamo Heights and Olmos Park to West Lake Hills, with contracted programs for luxury homes in California and Hawaii. We also handle government, commercial, post-construction and private aircraft cleaning.
           </p>
 
           {/* Trust indicators */}
